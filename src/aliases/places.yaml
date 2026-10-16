@@ -3,7 +3,13 @@
     "folder": [
       "inode-directory",
       "gtk-directory",
-      "folder-visiting"
+      "folder-visiting",
+      "folder-link",
+      "folder-hidden",
+      "folder-hidden-link"
+    ],
+    "folder-open": [
+      "folder-drag-accept"
     ],
     "user-home": [
       "folder-home",
@@ -58,7 +64,13 @@
     "folder": [
       "inode-directory",
       "gtk-directory",
-      "folder-visiting"
+      "folder-visiting",
+      "folder-link",
+      "folder-hidden",
+      "folder-hidden-link"
+    ],
+    "folder-open": [
+      "folder-drag-accept"
     ],
     "user-home": [
       "folder-home",
@@ -113,7 +125,13 @@
     "folder": [
       "inode-directory",
       "gtk-directory",
-      "folder-visiting"
+      "folder-visiting",
+      "folder-link",
+      "folder-hidden",
+      "folder-hidden-link"
+    ],
+    "folder-open": [
+      "folder-drag-accept"
     ],
     "user-home": [
       "folder-home",
@@ -168,7 +186,13 @@
     "folder-symbolic": [
       "inode-directory-symbolic",
       "gtk-directory-symbolic",
-      "folder-visiting-symbolic"
+      "folder-visiting-symbolic",
+      "folder-link-symbolic",
+      "folder-hidden-symbolic",
+      "folder-hidden-link-symbolic"
+    ],
+    "folder-open-symbolic": [
+      "folder-drag-accept-symbolic"
     ],
     "user-home-symbolic": [
       "folder-home-symbolic",

@@ -7,9 +7,8 @@ in the installable theme. Generated artwork and project scripts use the root
 MIT license. Brand names identify the intended applications; trademarks remain
 with their respective owners. This theme is not affiliated with those projects.
 
-The user's supplied files under `docs/mockups/` and the supplied implementation
-plan are design references. The project license does not relicense those inputs;
-they are not included in the theme package.
+User-supplied design references are not distributed with the repository or theme
+package. The project license does not relicense those inputs.
 
 PySide6/Qt is an authoring tool for converting this project's symbolic strokes
 to filled paths. librsvg and Pillow render preview sheets. These tools and their

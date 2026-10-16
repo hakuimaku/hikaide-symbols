@@ -1,8 +1,0 @@
-<g id="hidden-label" transform="translate(5 7) scale(.65 .85)" fill="none" stroke="#c2c6c8" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M0 0v6m0-3c0-2 3-2 3 0v3"/>
-  <path transform="translate(5 0)" d="M0 .2h.1M0 2v4"/>
-  <path transform="translate(8 0)" d="M3 0v6m0-2c0-3-3-3-3 0s3 3 3 0"/>
-  <path transform="translate(13 0)" d="M3 0v6m0-2c0-3-3-3-3 0s3 3 3 0"/>
-  <path transform="translate(18 0)" d="M0 4h3c0-3-3-3-3 0q0 3 3 1"/>
-  <path transform="translate(23 0)" d="M0 6V2m0 2c0-3 3-3 3 0v2"/>
-</g>

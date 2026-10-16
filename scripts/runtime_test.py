@@ -102,6 +102,11 @@ def run_gtk(version):
                 render(file.stem, 32)
     for name in symbolic_names:
         render(name, 16)
+    for suffix in ("", "-symbolic"):
+        for size in sizes:
+            dropped = render("folder-drag-accept" + suffix, size)
+            assert dropped.tobytes() == render("folder-open" + suffix, size).tobytes(), "Drop icon must use open artwork"
+            assert dropped.tobytes() != render("folder" + suffix, size).tobytes(), "Open folder must differ from closed folder"
     for name in ("folder", "application-pdf", "firefox", "document-save-symbolic"):
         info, path = lookup(name, 32, scale=2)
         assert path.is_relative_to(THEME)
@@ -149,7 +154,7 @@ def run_gtk(version):
     while time.monotonic() < deadline and context.pending():
         context.iteration(False)
 
-    sample = ["folder", "folder-home", "folder-download", "application-pdf", "text-x-python", "firefox", "vscode",
+    sample = ["folder", "folder-drag-accept", "folder-home", "folder-download", "application-pdf", "text-x-python", "firefox", "vscode",
               "org.mozilla.firefox", "org.gnome.Nautilus", "document-save-symbolic", "network-wireless-signal-good-symbolic",
               "battery-level-50-symbolic", "object-select-symbolic", "folder-home-symbolic"]
     sheet = Image.new("RGB", (960, len(sample) * 90 + 70), "#121820")

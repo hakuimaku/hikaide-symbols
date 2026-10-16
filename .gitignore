@@ -15,9 +15,8 @@ __pycache__/
 .env.*
 !.env.example
 
-# Generated machine-specific reports; keep the curated QA summary
-/reports/*
-!/reports/QA.md
+# Generated machine-specific reports; curated QA lives in docs/
+/reports/
 
 # Editor and operating-system temporary files
 *.swp

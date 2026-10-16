@@ -2,6 +2,7 @@
   "places": [
     "folder",
     "folder-open",
+    "folder-drag-accept",
     "folder-home",
     "user-home",
     "user-desktop",

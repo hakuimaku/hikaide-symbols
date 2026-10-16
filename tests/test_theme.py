@@ -54,22 +54,16 @@ class ThemeTests(unittest.TestCase):
                     continue
                 root = ET.fromstring(file.read_text())
                 self.assertFalse(any(el.tag.endswith(("Gradient", "filter")) for el in root.iter()), file)
-                link = file.stem in {"folder-link", "folder-hidden-link"}
-                hidden = file.stem in {"folder-hidden", "folder-hidden-link"}
                 circles = [el for el in root.iter() if el.tag.endswith("}circle")]
-                self.assertEqual(len(circles), 1 if link else 0, file)
-                if link:
-                    self.assertEqual((circles[0].get("cx"), circles[0].get("cy")), ("56", "25"), file)
-                    self.assertEqual(circles[0].get("class"), "ColorScheme-Highlight", file)
-                    self.assertEqual(circles[0].get("fill"), "currentColor", file)
-                plain = file.stem in {"folder", "folder-open", "folder-link", "folder-hidden", "folder-hidden-link"}
-                groups = [el for el in root.iter() if el.tag.endswith("}g") and el.get("id") != "hidden-label"]
+                self.assertEqual(circles, [], file)
+                plain = file.stem in {"folder", "folder-open"}
+                groups = [el for el in root.iter() if el.tag.endswith("}g")]
                 self.assertEqual(len(groups), 0 if plain else 1, file)
-                self.assertEqual("ColorScheme-Highlight" in file.read_text(), not plain or link, file)
-                self.assertEqual(any(el.get("id") == "hidden-label" for el in root.iter()), hidden, file)
+                self.assertEqual("ColorScheme-Highlight" in file.read_text(), not plain, file)
+                self.assertFalse(any(el.get("id") == "hidden-label" for el in root.iter()), file)
                 for el in root.iter():
                     tag = el.tag.rsplit("}", 1)[-1]
-                    if tag == "g" and el.get("id") != "hidden-label":
+                    if tag == "g":
                         self.assertIn("ColorScheme-Highlight", el.get("class", ""), file)
                         self.assertTrue(el.get("stroke") == "currentColor" or el.get("fill") == "currentColor", file)
                 for size in (16, 24, 64):
@@ -80,6 +74,19 @@ class ThemeTests(unittest.TestCase):
                     if size == 64:
                         self.assertEqual(image.getpixel((58, 55)), (23, 25, 26, 255), file)
                         self.assertEqual(image.getpixel((5, 55)), (48, 50, 51, 255) if file.stem != "folder-open" else (56, 59, 61, 255), file)
+
+    def test_folder_drop_uses_open_artwork_and_legacy_states_are_plain(self):
+        from render_png import render
+        for variant in ("scalable", "16x16", "24x24", "symbolic"):
+            folder = THEME / variant / "places"
+            suffix = "-symbolic.svg" if variant == "symbolic" else ".svg"
+            opened = folder / ("folder-open" + suffix)
+            dropped = folder / ("folder-drag-accept" + suffix)
+            self.assertEqual(dropped.resolve(), opened)
+            for name in ("folder-link", "folder-hidden", "folder-hidden-link"):
+                self.assertEqual((folder / (name + suffix)).resolve(), folder / ("folder" + suffix))
+            for size in (16, 24, 32, 48, 64):
+                self.assertNotEqual(render(opened, size), render(folder / ("folder" + suffix), size))
 
     def test_validator_rejects_corruption(self):
         with tempfile.TemporaryDirectory() as tmp:

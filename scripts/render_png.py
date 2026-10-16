@@ -47,7 +47,7 @@ def contact_sheet(family, theme=THEME):
     sheet.save(target)
     print(target.relative_to(ROOT))
     if family == "places":
-        states = ["folder", "folder-link", "folder-hidden", "folder-hidden-link"]
+        states = ["folder", "folder-open", "folder-drag-accept", "folder-documents"]
         preview = Image.new("RGB", (800, 220), "#101318")
         labels = ImageDraw.Draw(preview)
         for column, name in enumerate(states):

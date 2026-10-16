@@ -11,6 +11,7 @@ from theme import ROOT
 P = {
     "minus": "M3 12h18",
     "folder": "M3 8V6h6l3 3h9v12H3Z",
+    "folder-open": "M3 12V6h6l3 3h9v3M3 21l-2-9h22l-4 9Z",
     "home": "M2 11 12 2l10 9h-4v11h-5v-7h-3v7H5V11Z",
     "monitor": "M2 3h20v14H2ZM8 22h8m-4-5v5",
     "document": "M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h8",
@@ -140,7 +141,7 @@ def primitive(family, name="shell"):
 
 def places():
     data = {
-        "folder": "folder", "folder-open": "folder", "user-home": "home", "user-desktop": "monitor",
+        "folder": "folder", "folder-open": "folder-open", "user-home": "home", "user-desktop": "monitor",
         "folder-documents": "document", "folder-download": "download", "folder-music": "music",
         "folder-pictures": "image", "folder-publicshare": "users", "folder-templates": "template",
         "folder-videos": "film", "folder-projects": "chart", "folder-code": "code", "folder-work": "briefcase",
@@ -154,7 +155,8 @@ def places():
         for family, width in (("places", 2.3), ("16x16/places", 2.7), ("24x24/places", 2.7)):
             body = shell
             if name == "folder-open":
-                body += '<path d="M1 28h62l-6 29q-.5 3-4 3H8q-4 0-4-4Z" fill="#383b3d"/>'
+                body += '<path d="M5 23q0-3 3-3h48q3 0 3 3v27H5Z" fill="#202223"/>'
+                body += '<path d="M1 36q0-4 4-4l50-6q8-1 8 6v21q0 7-7 7H8q-7 0-7-7Z" fill="#383b3d"/>'
             if name == "user-trash-full":
                 body += '<path d="m28 30-3-6 6-2 4 8m0 0 4-5 6 3-2 4" fill="none" class="ColorScheme-Highlight" stroke="currentColor" stroke-width="2.6"/>'
             decorated = name not in {"folder", "folder-open"}
@@ -162,15 +164,9 @@ def places():
                 body += f'<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor">{glyph(symbol, width=width)}</g>'
             body += primitive("folder", "corner")
             write(family, name, body, accent=decorated)
-            if name == "folder":
-                dot = '<circle cx="56" cy="25" r="3" class="ColorScheme-Highlight" fill="currentColor"/>'
-                hidden = body + primitive("folder", "hidden-label")
-                # File managers need explicit state integration to select these variants.
-                write(family, "folder-link", body + dot, accent=True)
-                write(family, "folder-hidden", hidden)
-                write(family, "folder-hidden-link", hidden + dot, accent=True)
         symbolic("places", name, symbol)
-    aliases = {"folder": ["inode-directory", "gtk-directory", "folder-visiting"],
+    aliases = {"folder": ["inode-directory", "gtk-directory", "folder-visiting", "folder-link", "folder-hidden", "folder-hidden-link"],
+               "folder-open": ["folder-drag-accept"],
                "user-home": ["folder-home", "gnome-fs-home", "go-home"],
                "user-desktop": ["folder-desktop", "desktop"],
                "folder-download": ["folder-downloads"], "folder-publicshare": ["folder-public"],

@@ -5,7 +5,7 @@ uses original SVG interpretations rather than cropped bitmap tiles.
 
 | Family | Geometry and treatment |
 | --- | --- |
-| Places | 64×64, large flat graphite folder, solid dark lower-right triangle; ordinary folders have no dot or inner glyph, special folders use an accent glyph; explicit link variants add an upper-right accent dot, hidden variants label the tab; no gradients or shadows |
+| Places | 64×64, large flat graphite folder, solid dark lower-right triangle; ordinary folders have no dot or inner glyph, special folders use an accent glyph; link/hidden names reuse the plain folder, drag acceptance uses an open folder; no gradients or shadows |
 | Files | 64×64, common off-white folded page, charcoal format glyph, no colored file-format badges |
 | Apps | 64×64, recognizable silhouette, gradients and controlled highlights, consistent optical bounds |
 | Devices | Rounded silver/graphite geometry, shared glyph weights, accent indicator |
@@ -20,8 +20,7 @@ Fixed palette (artwork colors, not independently editable accents):
 | Folder front | Flat `#303233`; open front `#383b3d` |
 | Folder lower-right triangle | Flat `#17191a` |
 | Special-folder glyph | Consumes the single mutable accent through `currentColor`; plain folders have no glyph |
-| Link variant dot | Same accent, center (56, 25), radius 3 |
-| Hidden variant label | Fixed `#c2c6c8` vector lettering on the upper-left tab |
+| Open folder interior | Flat `#202223`, with a sloped front flap |
 | Paper | `#f0f0f3` → `#bfc1ca` |
 | Fold | `#8b8e99` → `#b3b6bf` |
 | File glyph | `#30333c` |
