@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>emblem-synchronizing</title>
+
+<circle cx="32" cy="32" r="26" fill="#202834" stroke="#485363" stroke-width="2"/><g transform="translate(16 16) scale(1.33)"><path d="M3 10a9 9 0 0 1 16-5l3 4M22 2v7h-7M21 14a9 9 0 0 1-16 5l-3-4m0 7v-7h7" fill="none" stroke="#e5e9f1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

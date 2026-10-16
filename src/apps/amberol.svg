@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>amberol</title>
+
+<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#f1b56a"/><stop offset="1" stop-color="#bd6b3e"/></linearGradient></defs>
+<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
+<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
+<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
+<g transform="translate(16 15) scale(1.33)"><path d="M9 17V5l12-3v13M9 9l12-3M9 17a3 3 0 1 1-3-3q3 0 3 3Zm12-2a3 3 0 1 1-3-3q3 0 3 3Z" fill="none" stroke="#f2f5fc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

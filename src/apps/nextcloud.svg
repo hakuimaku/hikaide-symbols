@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>nextcloud</title>
+
+<circle cx="32" cy="31" r="12" fill="none" stroke="#25b5f3" stroke-width="6"/><circle cx="10" cy="31" r="8" fill="none" stroke="#25b5f3" stroke-width="5"/><circle cx="54" cy="31" r="8" fill="none" stroke="#25b5f3" stroke-width="5"/>
+</svg>

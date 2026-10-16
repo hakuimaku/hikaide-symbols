@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>application-x-ruby</title>
+
+<defs><linearGradient id="paper" x2=".6" y2="1"><stop stop-color="#f0f0f3"/><stop offset="1" stop-color="#bfc1ca"/></linearGradient><linearGradient id="fold" x2="1" y2="1"><stop stop-color="#8b8e99"/><stop offset="1" stop-color="#b3b6bf"/></linearGradient></defs>
+<path d="M17 6h24l11 11v37q0 5-5 5H17q-5 0-5-5V11q0-5 5-5Z" fill="#000" opacity=".18" transform="translate(0 1)"/>
+<path d="M17 5h24l11 11v37q0 5-5 5H17q-5 0-5-5V10q0-5 5-5Z" fill="url(#paper)"/>
+<path d="M41 5v8q0 4 4 4h7Z" fill="url(#fold)"/>
+<path d="M17 6h23M13 11v41" fill="none" stroke="#fff" stroke-opacity=".5"/>
+<g transform="translate(20 25)"><path d="m6 3-5 6 11 14L23 9l-5-6ZM1 9h22M6 3l6 20 6-20" fill="none" stroke="#30333c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

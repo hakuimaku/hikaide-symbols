@@ -1,0 +1,683 @@
+{
+  "scalable/mimetypes": {
+    "text-x-generic": [
+      "text-plain",
+      "text-rtf",
+      "text-richtext",
+      "application-rtf",
+      "application-x-empty",
+      "text-x-log"
+    ],
+    "application-msword": [
+      "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application-vnd.ms-word"
+    ],
+    "application-vnd.ms-excel": [
+      "application-vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ],
+    "application-vnd.ms-powerpoint": [
+      "application-vnd.openxmlformats-officedocument.presentationml.presentation"
+    ],
+    "application-pdf": [
+      "application-x-pdf"
+    ],
+    "text-markdown": [
+      "text-x-markdown"
+    ],
+    "application-vnd.oasis.opendocument.text": [
+      "application-vnd.oasis.opendocument.text-template"
+    ],
+    "application-vnd.oasis.opendocument.spreadsheet": [
+      "application-vnd.oasis.opendocument.spreadsheet-template"
+    ],
+    "application-vnd.oasis.opendocument.presentation": [
+      "application-vnd.oasis.opendocument.presentation-template"
+    ],
+    "image-x-generic": [
+      "image-jpeg",
+      "image-jpg",
+      "image-webp",
+      "image-heic",
+      "image-heif",
+      "image-tiff",
+      "image-bmp",
+      "image-x-icon",
+      "image-avif"
+    ],
+    "image-raw": [
+      "image-x-dcraw",
+      "image-x-adobe-dng",
+      "image-x-canon-cr2",
+      "image-x-canon-cr3",
+      "image-x-nikon-nef",
+      "image-x-sony-arw"
+    ],
+    "image-svg+xml": [
+      "image-svg+xml-compressed",
+      "image-x-eps",
+      "application-postscript"
+    ],
+    "application-x-photoshop": [
+      "image-vnd.adobe.photoshop",
+      "image-x-psd"
+    ],
+    "application-illustrator": [
+      "application-vnd.adobe.illustrator"
+    ],
+    "audio-x-generic": [
+      "audio-mpeg",
+      "audio-flac",
+      "audio-x-flac",
+      "audio-x-wav",
+      "audio-wav",
+      "audio-vnd.wave",
+      "audio-aac",
+      "audio-ogg",
+      "application-ogg",
+      "audio-x-m4a",
+      "audio-mp4",
+      "audio-alac",
+      "audio-aiff",
+      "audio-x-aiff",
+      "audio-opus",
+      "audio-x-vorbis+ogg"
+    ],
+    "audio-midi": [
+      "audio-x-midi"
+    ],
+    "application-x-cue": [
+      "application-x-cdrdao-toc"
+    ],
+    "video-x-generic": [
+      "video-mp4",
+      "video-x-matroska",
+      "video-x-msvideo",
+      "video-quicktime",
+      "video-x-ms-wmv",
+      "video-x-flv",
+      "video-webm",
+      "video-m4v",
+      "video-x-m4v",
+      "video-3gpp",
+      "video-mpeg",
+      "video-ogg",
+      "video-x-ogm+ogg"
+    ],
+    "application-zip": [
+      "application-x-rar",
+      "application-vnd.rar",
+      "application-x-7z-compressed",
+      "application-x-tar",
+      "application-gzip",
+      "application-x-gzip",
+      "application-x-xz",
+      "application-x-bzip",
+      "application-x-bzip2",
+      "application-zstd",
+      "application-x-zstd",
+      "application-x-compressed-tar",
+      "application-x-xz-compressed-tar",
+      "application-x-bzip-compressed-tar",
+      "application-x-lzma",
+      "application-x-lz4"
+    ],
+    "application-x-iso9660-image": [
+      "application-x-cd-image",
+      "application-x-raw-disk-image",
+      "application-x-apple-diskimage"
+    ],
+    "application-octet-stream": [
+      "application-x-firmware"
+    ],
+    "text-html": [
+      "application-xhtml+xml"
+    ],
+    "text-css": [
+      "text-x-scss",
+      "text-x-sass"
+    ],
+    "application-javascript": [
+      "text-javascript",
+      "application-x-javascript"
+    ],
+    "text-x-python": [
+      "text-x-python3",
+      "application-x-python-bytecode"
+    ],
+    "application-x-php": [
+      "text-x-php"
+    ],
+    "application-x-ruby": [
+      "text-x-ruby"
+    ],
+    "text-x-java": [
+      "text-x-java-source",
+      "application-java-archive",
+      "application-x-java-archive"
+    ],
+    "text-x-c": [
+      "text-x-csrc",
+      "text-x-chdr"
+    ],
+    "text-x-c++src": [
+      "text-x-c++hdr"
+    ],
+    "text-x-shellscript": [
+      "application-x-shellscript",
+      "text-x-script"
+    ],
+    "text-x-config": [
+      "application-x-desktop",
+      "text-x-ini",
+      "application-x-wine-extension-ini"
+    ],
+    "application-json": [
+      "application-ld+json"
+    ],
+    "application-xml": [
+      "text-xml"
+    ],
+    "text-yaml": [
+      "application-yaml",
+      "application-x-yaml",
+      "text-x-yaml"
+    ],
+    "text-toml": [
+      "application-toml"
+    ],
+    "text-x-rust": [
+      "text-rust"
+    ],
+    "text-x-typescript": [
+      "application-typescript",
+      "text-typescript"
+    ],
+    "application-x-executable": [
+      "application-x-sharedlib",
+      "application-x-object",
+      "application-x-pie-executable",
+      "application-x-ms-dos-executable"
+    ],
+    "application-x-appimage": [
+      "application-vnd.appimage",
+      "application-x-iso9660-appimage"
+    ],
+    "application-vnd.flatpak": [
+      "application-vnd.flatpak.ref",
+      "application-vnd.flatpak.repo"
+    ],
+    "application-x-rpm": [
+      "application-vnd.debian.binary-package",
+      "application-x-deb",
+      "application-x-alpm-package",
+      "application-x-archlinux-package"
+    ],
+    "application-x-font-ttf": [
+      "font-ttf",
+      "font-otf",
+      "application-x-font-otf",
+      "application-font-woff",
+      "font-woff",
+      "font-woff2"
+    ],
+    "application-x-sqlite3": [
+      "application-vnd.sqlite3",
+      "application-sql",
+      "text-x-sql"
+    ]
+  },
+  "16x16/mimetypes": {
+    "text-x-generic": [
+      "text-plain",
+      "text-rtf",
+      "text-richtext",
+      "application-rtf",
+      "application-x-empty",
+      "text-x-log"
+    ],
+    "application-msword": [
+      "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application-vnd.ms-word"
+    ],
+    "application-vnd.ms-excel": [
+      "application-vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ],
+    "application-vnd.ms-powerpoint": [
+      "application-vnd.openxmlformats-officedocument.presentationml.presentation"
+    ],
+    "application-pdf": [
+      "application-x-pdf"
+    ],
+    "text-markdown": [
+      "text-x-markdown"
+    ],
+    "application-vnd.oasis.opendocument.text": [
+      "application-vnd.oasis.opendocument.text-template"
+    ],
+    "application-vnd.oasis.opendocument.spreadsheet": [
+      "application-vnd.oasis.opendocument.spreadsheet-template"
+    ],
+    "application-vnd.oasis.opendocument.presentation": [
+      "application-vnd.oasis.opendocument.presentation-template"
+    ],
+    "image-x-generic": [
+      "image-jpeg",
+      "image-jpg",
+      "image-webp",
+      "image-heic",
+      "image-heif",
+      "image-tiff",
+      "image-bmp",
+      "image-x-icon",
+      "image-avif"
+    ],
+    "image-raw": [
+      "image-x-dcraw",
+      "image-x-adobe-dng",
+      "image-x-canon-cr2",
+      "image-x-canon-cr3",
+      "image-x-nikon-nef",
+      "image-x-sony-arw"
+    ],
+    "image-svg+xml": [
+      "image-svg+xml-compressed",
+      "image-x-eps",
+      "application-postscript"
+    ],
+    "application-x-photoshop": [
+      "image-vnd.adobe.photoshop",
+      "image-x-psd"
+    ],
+    "application-illustrator": [
+      "application-vnd.adobe.illustrator"
+    ],
+    "audio-x-generic": [
+      "audio-mpeg",
+      "audio-flac",
+      "audio-x-flac",
+      "audio-x-wav",
+      "audio-wav",
+      "audio-vnd.wave",
+      "audio-aac",
+      "audio-ogg",
+      "application-ogg",
+      "audio-x-m4a",
+      "audio-mp4",
+      "audio-alac",
+      "audio-aiff",
+      "audio-x-aiff",
+      "audio-opus",
+      "audio-x-vorbis+ogg"
+    ],
+    "audio-midi": [
+      "audio-x-midi"
+    ],
+    "application-x-cue": [
+      "application-x-cdrdao-toc"
+    ],
+    "video-x-generic": [
+      "video-mp4",
+      "video-x-matroska",
+      "video-x-msvideo",
+      "video-quicktime",
+      "video-x-ms-wmv",
+      "video-x-flv",
+      "video-webm",
+      "video-m4v",
+      "video-x-m4v",
+      "video-3gpp",
+      "video-mpeg",
+      "video-ogg",
+      "video-x-ogm+ogg"
+    ],
+    "application-zip": [
+      "application-x-rar",
+      "application-vnd.rar",
+      "application-x-7z-compressed",
+      "application-x-tar",
+      "application-gzip",
+      "application-x-gzip",
+      "application-x-xz",
+      "application-x-bzip",
+      "application-x-bzip2",
+      "application-zstd",
+      "application-x-zstd",
+      "application-x-compressed-tar",
+      "application-x-xz-compressed-tar",
+      "application-x-bzip-compressed-tar",
+      "application-x-lzma",
+      "application-x-lz4"
+    ],
+    "application-x-iso9660-image": [
+      "application-x-cd-image",
+      "application-x-raw-disk-image",
+      "application-x-apple-diskimage"
+    ],
+    "application-octet-stream": [
+      "application-x-firmware"
+    ],
+    "text-html": [
+      "application-xhtml+xml"
+    ],
+    "text-css": [
+      "text-x-scss",
+      "text-x-sass"
+    ],
+    "application-javascript": [
+      "text-javascript",
+      "application-x-javascript"
+    ],
+    "text-x-python": [
+      "text-x-python3",
+      "application-x-python-bytecode"
+    ],
+    "application-x-php": [
+      "text-x-php"
+    ],
+    "application-x-ruby": [
+      "text-x-ruby"
+    ],
+    "text-x-java": [
+      "text-x-java-source",
+      "application-java-archive",
+      "application-x-java-archive"
+    ],
+    "text-x-c": [
+      "text-x-csrc",
+      "text-x-chdr"
+    ],
+    "text-x-c++src": [
+      "text-x-c++hdr"
+    ],
+    "text-x-shellscript": [
+      "application-x-shellscript",
+      "text-x-script"
+    ],
+    "text-x-config": [
+      "application-x-desktop",
+      "text-x-ini",
+      "application-x-wine-extension-ini"
+    ],
+    "application-json": [
+      "application-ld+json"
+    ],
+    "application-xml": [
+      "text-xml"
+    ],
+    "text-yaml": [
+      "application-yaml",
+      "application-x-yaml",
+      "text-x-yaml"
+    ],
+    "text-toml": [
+      "application-toml"
+    ],
+    "text-x-rust": [
+      "text-rust"
+    ],
+    "text-x-typescript": [
+      "application-typescript",
+      "text-typescript"
+    ],
+    "application-x-executable": [
+      "application-x-sharedlib",
+      "application-x-object",
+      "application-x-pie-executable",
+      "application-x-ms-dos-executable"
+    ],
+    "application-x-appimage": [
+      "application-vnd.appimage",
+      "application-x-iso9660-appimage"
+    ],
+    "application-vnd.flatpak": [
+      "application-vnd.flatpak.ref",
+      "application-vnd.flatpak.repo"
+    ],
+    "application-x-rpm": [
+      "application-vnd.debian.binary-package",
+      "application-x-deb",
+      "application-x-alpm-package",
+      "application-x-archlinux-package"
+    ],
+    "application-x-font-ttf": [
+      "font-ttf",
+      "font-otf",
+      "application-x-font-otf",
+      "application-font-woff",
+      "font-woff",
+      "font-woff2"
+    ],
+    "application-x-sqlite3": [
+      "application-vnd.sqlite3",
+      "application-sql",
+      "text-x-sql"
+    ]
+  },
+  "24x24/mimetypes": {
+    "text-x-generic": [
+      "text-plain",
+      "text-rtf",
+      "text-richtext",
+      "application-rtf",
+      "application-x-empty",
+      "text-x-log"
+    ],
+    "application-msword": [
+      "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application-vnd.ms-word"
+    ],
+    "application-vnd.ms-excel": [
+      "application-vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ],
+    "application-vnd.ms-powerpoint": [
+      "application-vnd.openxmlformats-officedocument.presentationml.presentation"
+    ],
+    "application-pdf": [
+      "application-x-pdf"
+    ],
+    "text-markdown": [
+      "text-x-markdown"
+    ],
+    "application-vnd.oasis.opendocument.text": [
+      "application-vnd.oasis.opendocument.text-template"
+    ],
+    "application-vnd.oasis.opendocument.spreadsheet": [
+      "application-vnd.oasis.opendocument.spreadsheet-template"
+    ],
+    "application-vnd.oasis.opendocument.presentation": [
+      "application-vnd.oasis.opendocument.presentation-template"
+    ],
+    "image-x-generic": [
+      "image-jpeg",
+      "image-jpg",
+      "image-webp",
+      "image-heic",
+      "image-heif",
+      "image-tiff",
+      "image-bmp",
+      "image-x-icon",
+      "image-avif"
+    ],
+    "image-raw": [
+      "image-x-dcraw",
+      "image-x-adobe-dng",
+      "image-x-canon-cr2",
+      "image-x-canon-cr3",
+      "image-x-nikon-nef",
+      "image-x-sony-arw"
+    ],
+    "image-svg+xml": [
+      "image-svg+xml-compressed",
+      "image-x-eps",
+      "application-postscript"
+    ],
+    "application-x-photoshop": [
+      "image-vnd.adobe.photoshop",
+      "image-x-psd"
+    ],
+    "application-illustrator": [
+      "application-vnd.adobe.illustrator"
+    ],
+    "audio-x-generic": [
+      "audio-mpeg",
+      "audio-flac",
+      "audio-x-flac",
+      "audio-x-wav",
+      "audio-wav",
+      "audio-vnd.wave",
+      "audio-aac",
+      "audio-ogg",
+      "application-ogg",
+      "audio-x-m4a",
+      "audio-mp4",
+      "audio-alac",
+      "audio-aiff",
+      "audio-x-aiff",
+      "audio-opus",
+      "audio-x-vorbis+ogg"
+    ],
+    "audio-midi": [
+      "audio-x-midi"
+    ],
+    "application-x-cue": [
+      "application-x-cdrdao-toc"
+    ],
+    "video-x-generic": [
+      "video-mp4",
+      "video-x-matroska",
+      "video-x-msvideo",
+      "video-quicktime",
+      "video-x-ms-wmv",
+      "video-x-flv",
+      "video-webm",
+      "video-m4v",
+      "video-x-m4v",
+      "video-3gpp",
+      "video-mpeg",
+      "video-ogg",
+      "video-x-ogm+ogg"
+    ],
+    "application-zip": [
+      "application-x-rar",
+      "application-vnd.rar",
+      "application-x-7z-compressed",
+      "application-x-tar",
+      "application-gzip",
+      "application-x-gzip",
+      "application-x-xz",
+      "application-x-bzip",
+      "application-x-bzip2",
+      "application-zstd",
+      "application-x-zstd",
+      "application-x-compressed-tar",
+      "application-x-xz-compressed-tar",
+      "application-x-bzip-compressed-tar",
+      "application-x-lzma",
+      "application-x-lz4"
+    ],
+    "application-x-iso9660-image": [
+      "application-x-cd-image",
+      "application-x-raw-disk-image",
+      "application-x-apple-diskimage"
+    ],
+    "application-octet-stream": [
+      "application-x-firmware"
+    ],
+    "text-html": [
+      "application-xhtml+xml"
+    ],
+    "text-css": [
+      "text-x-scss",
+      "text-x-sass"
+    ],
+    "application-javascript": [
+      "text-javascript",
+      "application-x-javascript"
+    ],
+    "text-x-python": [
+      "text-x-python3",
+      "application-x-python-bytecode"
+    ],
+    "application-x-php": [
+      "text-x-php"
+    ],
+    "application-x-ruby": [
+      "text-x-ruby"
+    ],
+    "text-x-java": [
+      "text-x-java-source",
+      "application-java-archive",
+      "application-x-java-archive"
+    ],
+    "text-x-c": [
+      "text-x-csrc",
+      "text-x-chdr"
+    ],
+    "text-x-c++src": [
+      "text-x-c++hdr"
+    ],
+    "text-x-shellscript": [
+      "application-x-shellscript",
+      "text-x-script"
+    ],
+    "text-x-config": [
+      "application-x-desktop",
+      "text-x-ini",
+      "application-x-wine-extension-ini"
+    ],
+    "application-json": [
+      "application-ld+json"
+    ],
+    "application-xml": [
+      "text-xml"
+    ],
+    "text-yaml": [
+      "application-yaml",
+      "application-x-yaml",
+      "text-x-yaml"
+    ],
+    "text-toml": [
+      "application-toml"
+    ],
+    "text-x-rust": [
+      "text-rust"
+    ],
+    "text-x-typescript": [
+      "application-typescript",
+      "text-typescript"
+    ],
+    "application-x-executable": [
+      "application-x-sharedlib",
+      "application-x-object",
+      "application-x-pie-executable",
+      "application-x-ms-dos-executable"
+    ],
+    "application-x-appimage": [
+      "application-vnd.appimage",
+      "application-x-iso9660-appimage"
+    ],
+    "application-vnd.flatpak": [
+      "application-vnd.flatpak.ref",
+      "application-vnd.flatpak.repo"
+    ],
+    "application-x-rpm": [
+      "application-vnd.debian.binary-package",
+      "application-x-deb",
+      "application-x-alpm-package",
+      "application-x-archlinux-package"
+    ],
+    "application-x-font-ttf": [
+      "font-ttf",
+      "font-otf",
+      "application-x-font-otf",
+      "application-font-woff",
+      "font-woff",
+      "font-woff2"
+    ],
+    "application-x-sqlite3": [
+      "application-vnd.sqlite3",
+      "application-sql",
+      "text-x-sql"
+    ]
+  }
+}

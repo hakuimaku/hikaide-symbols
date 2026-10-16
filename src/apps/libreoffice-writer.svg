@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>libreoffice-writer</title>
+
+<path d="M12 4h29l12 12v43H12Z" fill="#328bcb" /><path d="M15 7h23l12 12v37H15Z" fill="#e9eef3" /><path d="M41 4h12v12Z" fill="#328bcb" /><g transform="translate(20 24) scale(1)"><path d="M4 5h16M4 10h16M4 15h16M4 20h10" fill="none" stroke="#328bcb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

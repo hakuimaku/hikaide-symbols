@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>opera</title>
+
+<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#ff555e"/><stop offset="1" stop-color="#d00030"/></linearGradient></defs><ellipse cx="32" cy="31" rx="25" ry="28" fill="url(#ink)"/><ellipse cx="34" cy="31" rx="13" ry="22" fill="#1c2330"/><path d="M34 9q16-5 22 12-4-20-22-18Z" fill="#ff858c" />
+</svg>

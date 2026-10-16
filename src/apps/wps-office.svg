@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>wps-office</title>
+
+<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#ff8b27"/><stop offset="1" stop-color="#d61442"/></linearGradient></defs><path d="m13 12 24-9 15 9v41l-15 8-24-10V20l12-4v30l12 5V13l-12 4Z" fill="url(#ink)" />
+</svg>

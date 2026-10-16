@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>github-desktop</title>
+
+<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#c47af3"/><stop offset="1" stop-color="#613197"/></linearGradient></defs><circle cx="32" cy="33" r="27" fill="#000" opacity=".2"/><circle cx="32" cy="31" r="27" fill="url(#ink)" /><path d="M12 18Q30-3 51 16" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1"/><path d="M17 19 18 10l8 5q7-2 13 0l8-5 1 9q7 10-1 19-4 4-11 4v14h-8V44q-12 2-15-8l-6-4q3-6 8 1 4 6 9 3-12-3-12-12Z" fill="#faf6ff" />
+</svg>

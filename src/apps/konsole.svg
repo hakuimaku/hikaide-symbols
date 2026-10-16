@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>konsole</title>
+
+<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#454f59"/><stop offset="1" stop-color="#171f27"/></linearGradient></defs>
+<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
+<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
+<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
+<g transform="translate(14 16) scale(1.4)"><path d="m3 5 7 7-7 7m9 1h9" fill="none" stroke="#f2f5f8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

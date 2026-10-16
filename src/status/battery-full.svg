@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>battery-full</title>
+<style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
+<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/><g transform="translate(8 8) scale(3)"><g color="#d3dbe6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4.5h12v7H1ZM13 7h2v2h-2"/><rect x="2.5" y="6" width="10" height="4" fill="currentColor" stroke="none"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
+</svg>

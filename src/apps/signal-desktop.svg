@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>signal-desktop</title>
+
+<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#4f9cff"/><stop offset="1" stop-color="#2674e1"/></linearGradient></defs><circle cx="32" cy="33" r="27" fill="#000" opacity=".2"/><circle cx="32" cy="31" r="27" fill="url(#ink)" /><path d="M12 18Q30-3 51 16" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1"/><path d="M49 30a17 17 0 1 0-30 11l-5 9 11-4a17 17 0 0 0 24-16Z" fill="none" stroke="#f7fbff" stroke-width="2.4" stroke-dasharray="4 2"/>
+</svg>

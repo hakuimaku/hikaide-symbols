@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>dialog-information</title>
+<style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
+<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/><g transform="translate(8 8) scale(3)"><g color="#d3dbe6"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.2"/><g transform="translate(3 3) scale(.4166667)"><path d="M12 10v9m0-14v1" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
+</svg>

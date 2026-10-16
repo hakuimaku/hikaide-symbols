@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>celluloid</title>
+
+<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#6588f5"/><stop offset="1" stop-color="#a03cad"/></linearGradient></defs>
+<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
+<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
+<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
+<circle cx="12" cy="13" r="2" fill="#edc1eb" /><circle cx="12" cy="31" r="2" fill="#edc1eb" /><circle cx="12" cy="49" r="2" fill="#edc1eb" /><circle cx="52" cy="13" r="2" fill="#edc1eb" /><circle cx="52" cy="31" r="2" fill="#edc1eb" /><circle cx="52" cy="49" r="2" fill="#edc1eb" /><path d="m25 19 20 12-20 12Z" fill="#fff" />
+</svg>

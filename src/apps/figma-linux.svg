@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>figma-linux</title>
+
+<rect x="13" y="4" width="19" height="19" rx="9" fill="#f76c5e" /><rect x="32" y="4" width="19" height="19" rx="9" fill="#ff9685" /><rect x="13" y="23" width="19" height="19" rx="9" fill="#a26bf0" /><circle cx="41.5" cy="32.5" r="9.5" fill="#38b7ee" /><path d="M13 42h19v9a9.5 9.5 0 1 1-19-9Z" fill="#36ce94" />
+</svg>

@@ -1,0 +1,6 @@
+[Icon Theme]
+Name=Hikaide-Symbols
+Comment=Graphite folders, folded paper files and sculpted application icons
+Inherits=hicolor
+Example=folder-home
+Directories=@DIRECTORIES@

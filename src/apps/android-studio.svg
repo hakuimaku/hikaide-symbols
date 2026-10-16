@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>android-studio</title>
+
+<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#73dba0"/><stop offset="1" stop-color="#3e8ccf"/></linearGradient></defs><path d="M5 6h36l17 21-5 31-30 2L3 39Z" fill="url(#ink)" /><path d="M20 3 59 19 51 54 9 61 3 28Z" fill="#73dba0" opacity=".5"/><rect x="13" y="13" width="39" height="39" rx="1" fill="#11151f" /><g transform="translate(17 16) scale(1.3)"><g transform="translate(6.9 3.5) scale(1.7)"><path transform="translate(0 0)" d="M0 10 3 0l3 10M1 6h4" fill="none" stroke="#f2f5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></g><path d="M20 45h14" fill="none" stroke="#f7f8fa" stroke-width="3"/>
+</svg>

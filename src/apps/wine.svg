@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>wine</title>
+
+<path d="M20 4h24l-2 24q-2 11-10 11t-10-11Z" fill="#e5e9ef" /><path d="M21 19q11-4 22 0l-1 9q-2 11-10 11t-10-11Z" fill="#b62d50" /><path d="M32 39v18m-10 2h20" fill="none" stroke="#cdd7e1" stroke-width="3" stroke-linecap="round"/>
+</svg>

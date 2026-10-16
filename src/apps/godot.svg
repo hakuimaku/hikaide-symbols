@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>godot</title>
+
+<path d="m7 22 5-12 8 4 5-8 7 5 7-5 5 8 8-4 5 12-4 29q-21 14-43 0Z" fill="#5398c7" /><circle cx="23" cy="30" r="5" fill="#fff" /><circle cx="42" cy="30" r="5" fill="#fff" /><circle cx="23" cy="30" r="2.5" fill="#254867" /><circle cx="42" cy="30" r="2.5" fill="#254867" /><path d="M13 43h10v5h18v-5h10M32 33v7" fill="none" stroke="#e7f4fd" stroke-width="3"/>
+</svg>

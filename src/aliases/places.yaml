@@ -1,0 +1,222 @@
+{
+  "scalable/places": {
+    "folder": [
+      "inode-directory",
+      "gtk-directory",
+      "folder-visiting"
+    ],
+    "user-home": [
+      "folder-home",
+      "gnome-fs-home"
+    ],
+    "user-desktop": [
+      "folder-desktop",
+      "desktop"
+    ],
+    "folder-download": [
+      "folder-downloads"
+    ],
+    "folder-publicshare": [
+      "folder-public"
+    ],
+    "folder-pictures": [
+      "folder-photos"
+    ],
+    "folder-favorites": [
+      "folder-favorite"
+    ],
+    "folder-saved-search": [
+      "folder-search"
+    ],
+    "user-trash": [
+      "folder-trash",
+      "gnome-fs-trash-empty"
+    ],
+    "user-trash-full": [
+      "gnome-fs-trash-full"
+    ],
+    "folder-recent": [
+      "document-open-recent"
+    ],
+    "folder-remote": [
+      "folder-ssh",
+      "folder-sftp"
+    ],
+    "folder-network": [
+      "network",
+      "gnome-fs-network"
+    ],
+    "folder-cloud": [
+      "folder-nextcloud",
+      "folder-owncloud"
+    ],
+    "folder-shared": [
+      "folder-share"
+    ]
+  },
+  "16x16/places": {
+    "folder": [
+      "inode-directory",
+      "gtk-directory",
+      "folder-visiting"
+    ],
+    "user-home": [
+      "folder-home",
+      "gnome-fs-home"
+    ],
+    "user-desktop": [
+      "folder-desktop",
+      "desktop"
+    ],
+    "folder-download": [
+      "folder-downloads"
+    ],
+    "folder-publicshare": [
+      "folder-public"
+    ],
+    "folder-pictures": [
+      "folder-photos"
+    ],
+    "folder-favorites": [
+      "folder-favorite"
+    ],
+    "folder-saved-search": [
+      "folder-search"
+    ],
+    "user-trash": [
+      "folder-trash",
+      "gnome-fs-trash-empty"
+    ],
+    "user-trash-full": [
+      "gnome-fs-trash-full"
+    ],
+    "folder-recent": [
+      "document-open-recent"
+    ],
+    "folder-remote": [
+      "folder-ssh",
+      "folder-sftp"
+    ],
+    "folder-network": [
+      "network",
+      "gnome-fs-network"
+    ],
+    "folder-cloud": [
+      "folder-nextcloud",
+      "folder-owncloud"
+    ],
+    "folder-shared": [
+      "folder-share"
+    ]
+  },
+  "24x24/places": {
+    "folder": [
+      "inode-directory",
+      "gtk-directory",
+      "folder-visiting"
+    ],
+    "user-home": [
+      "folder-home",
+      "gnome-fs-home"
+    ],
+    "user-desktop": [
+      "folder-desktop",
+      "desktop"
+    ],
+    "folder-download": [
+      "folder-downloads"
+    ],
+    "folder-publicshare": [
+      "folder-public"
+    ],
+    "folder-pictures": [
+      "folder-photos"
+    ],
+    "folder-favorites": [
+      "folder-favorite"
+    ],
+    "folder-saved-search": [
+      "folder-search"
+    ],
+    "user-trash": [
+      "folder-trash",
+      "gnome-fs-trash-empty"
+    ],
+    "user-trash-full": [
+      "gnome-fs-trash-full"
+    ],
+    "folder-recent": [
+      "document-open-recent"
+    ],
+    "folder-remote": [
+      "folder-ssh",
+      "folder-sftp"
+    ],
+    "folder-network": [
+      "network",
+      "gnome-fs-network"
+    ],
+    "folder-cloud": [
+      "folder-nextcloud",
+      "folder-owncloud"
+    ],
+    "folder-shared": [
+      "folder-share"
+    ]
+  },
+  "symbolic/places": {
+    "folder-symbolic": [
+      "inode-directory-symbolic",
+      "gtk-directory-symbolic",
+      "folder-visiting-symbolic"
+    ],
+    "user-home-symbolic": [
+      "folder-home-symbolic",
+      "gnome-fs-home-symbolic"
+    ],
+    "user-desktop-symbolic": [
+      "folder-desktop-symbolic",
+      "desktop-symbolic"
+    ],
+    "folder-download-symbolic": [
+      "folder-downloads-symbolic"
+    ],
+    "folder-publicshare-symbolic": [
+      "folder-public-symbolic"
+    ],
+    "folder-pictures-symbolic": [
+      "folder-photos-symbolic"
+    ],
+    "folder-favorites-symbolic": [
+      "folder-favorite-symbolic"
+    ],
+    "folder-saved-search-symbolic": [
+      "folder-search-symbolic"
+    ],
+    "user-trash-symbolic": [
+      "folder-trash-symbolic",
+      "gnome-fs-trash-empty-symbolic"
+    ],
+    "user-trash-full-symbolic": [
+      "gnome-fs-trash-full-symbolic"
+    ],
+    "folder-recent-symbolic": [
+      "document-open-recent-symbolic"
+    ],
+    "folder-remote-symbolic": [
+      "folder-ssh-symbolic",
+      "folder-sftp-symbolic"
+    ],
+    "folder-network-symbolic": [
+      "network-symbolic",
+      "gnome-fs-network-symbolic"
+    ],
+    "folder-cloud-symbolic": [
+      "folder-nextcloud-symbolic",
+      "folder-owncloud-symbolic"
+    ],
+    "folder-shared-symbolic": [
+      "folder-share-symbolic"
+    ]
+  }
+}
