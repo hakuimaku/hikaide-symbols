@@ -47,12 +47,6 @@ Select **Hikaide-Symbols** in GNOME Tweaks, Xfce Appearance, or your icon theme 
 gsettings set org.gnome.desktop.interface icon-theme 'Hikaide-Symbols'
 ```
 
-Optional accent color: install [icon-accent](https://github.com/hakuimaku/icon-accent), then run:
-
-```sh
-icon-accent set '#AC7994' --theme Hikaide-Symbols
-```
-
 ## Uninstall
 
 Select another icon theme, then run:
