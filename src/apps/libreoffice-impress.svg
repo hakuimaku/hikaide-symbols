@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>libreoffice-impress</title>
-
-<path d="M12 4h29l12 12v43H12Z" fill="#e58b44" /><path d="M15 7h23l12 12v37H15Z" fill="#e9eef3" /><path d="M41 4h12v12Z" fill="#e58b44" /><g transform="translate(20 24) scale(1)"><path d="M2 3h20v15H2Zm10 15v5m-6 0 6-5 6 5M6 7h12v7H6Z" fill="none" stroke="#e58b44" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-</svg>

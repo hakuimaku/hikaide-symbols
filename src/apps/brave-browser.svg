@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>brave-browser</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#ff9e30"/><stop offset="1" stop-color="#ee3f0d"/></linearGradient></defs><path d="m17 5 5 2h20l5-2 10 12-4 27-21 16-21-16-4-27Z" fill="url(#ink)" /><path d="m21 16 11 4 11-4 7 7-8 14-4-4 3-7-6 2v9l6 7-9 7-9-7 6-7v-9l-6-2 3 7-4 4-8-14Z" fill="#fff4e9" />
-</svg>

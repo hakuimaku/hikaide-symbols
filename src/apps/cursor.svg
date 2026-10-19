@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>cursor</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#b6c0cb"/><stop offset="1" stop-color="#5d6a7a"/></linearGradient></defs><path d="m32 3 26 15v29L32 62 6 47V18Z" fill="url(#ink)" /><path d="m15 18 36 5-14 13-5 18-6-19Z" fill="#fafcff" /><path d="m26 35 11 1-5 18Z" fill="#9da7b5" />
-</svg>

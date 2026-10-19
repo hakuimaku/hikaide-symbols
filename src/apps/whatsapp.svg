@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>whatsapp</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#55df98"/><stop offset="1" stop-color="#149e65"/></linearGradient></defs><circle cx="32" cy="33" r="27" fill="#000" opacity=".2"/><circle cx="32" cy="31" r="27" fill="url(#ink)" /><path d="M12 18Q30-3 51 16" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1"/><path d="M49 30a17 17 0 1 0-30 11l-5 9 11-4a17 17 0 0 0 24-16Z" fill="none" stroke="#f7fbff" stroke-width="2.4" stroke-dasharray="none"/><path d="M23 21q-5 14 15 22l6-6-6-4-3 4q-7-4-8-9l3-3-4-5Z" fill="#fff" />
-</svg>

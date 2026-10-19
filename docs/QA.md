@@ -9,23 +9,24 @@ unchecked session tests below are not claimed as passed.
 
 | Family | Canonical scalable SVG files | Resolved regular names including aliases |
 | --- | ---: | ---: |
-| Applications | 182 | 429 |
 | Places | 30 | 57 |
-| Mimetypes | 50 | 187 |
+| Mimetypes | 50 | 197 |
 | Devices | 27 | 27 |
-| Status | 29 | 57 |
-| Actions | 46 | 58 |
+| Status | 29 | 77 |
+| Actions | 52 | 73 |
 | Categories | 11 | 11 |
 | Emblems | 10 | 10 |
 
-Additionally: 165 canonical symbolic SVGs, 16/24 px optimized places/mimetypes,
-848 relative symlink aliases across all directories. The installable tree has
-710 regular SVG files and 1,558 SVG paths in total. File counts include size
+Applications fall back to `Adwaita,breeze,hicolor` via theme inheritance.
+
+Additionally: 159 canonical symbolic SVGs, 16/24 px optimized places/mimetypes,
+689 relative symlink aliases across all directories. The installable tree has
+528 regular SVG files and 1,217 SVG paths in total. File counts include size
 variants and reused concepts; they are not a count of distinct designs.
 
 The frozen [required-icon fixture](../tests/required-icons.json) covers all
-29 places, 88 mimetypes, 180 application identifiers, 27 devices, 29 statuses,
-34 actions, 11 categories and 10 emblems tracked by the required-icon fixture.
+29 places, 88 mimetypes, 27 devices, 29 statuses,
+39 actions, 11 categories and 10 emblems tracked by the required-icon fixture.
 
 ## Checks run
 
@@ -95,12 +96,12 @@ system icon or desktop file was changed.
 
 ## Installable artifact
 
-`dist/Hikaide-Symbols.tar.gz` — 92,334 bytes at this build.
+`dist/Hikaide-Symbols.tar.gz` — 73,013 bytes at this build.
 
 SHA-256:
 
 ```text
-620a5e7a864587ad0a4d4dccf98bc091bfb9b0263216d6ab45bda00208a8ab75
+4be185e113804a88f42c0b26b79d80e4b97f9f198f8e518f47844261ece39703
 ```
 
 The matching `.sha256` file is next to the archive. The package contains only
@@ -151,3 +152,18 @@ this case. The original fix passed all ten tests. Native GTK lookup and renderin
 Only the new app asset and icon cache were written to the installed theme;
 existing icons, accent and desktop files were preserved. The launcher UI
 itself was not reopened or inspected. See [icon preview](../previews/hwloc.png).
+
+## Tray status, context menu actions, home, archive, and app fallback updates
+
+1. **Missing Tray & Context Menu Icons (fixing black/purple checkerboard glitch)**:
+   - Fcitx5 and Blueman menus request standard action names (`application-exit`, `document-properties`, `application-x-addon`, `help-about`, `configure`, `document-send`) that were previously absent from the actions family, resulting in unrendered icons. Added canonical SVGs in `scalable/actions` and `symbolic/actions` along with aliases (`system-log-out`, `exit`, `preferences-plugin`, `plugin`, `help-contents`, `blueman-send`).
+   - Added tray status aliases for `nm-applet` (`nm-signal-00` through `nm-signal-100`, `network-wifi`, `nm-device-wireless`) and `blueman-tray` (`blueman-tray`, `blueman-active`, `blueman-disabled`) in both `scalable/status` and `symbolic/status`.
+2. **HOME Icon Geometry**:
+   - Replaced hollow double-line stroke outline with a solid filled silhouette house featuring a cutout doorway, matching the design in `docs/mockups/Bảng biểu tượng thư mục tối hiện đại.png`. Updated `user-home` and `start-here` across scalable, 16px, 24px, and symbolic directories.
+3. **Archive Mimetype Glyph**:
+   - Updated `application-zip` and its aliases (`application-x-tar`, `application-x-7z-compressed`, `application-x-rar`, `application-x-bzip2`, `application-x-gzip`, `application-x-xz`, `application-zstd`, `package-x-generic`, etc.) to a minimal isometric yellow-orange cardboard box ("thùng vàng cam cơ bản") with tape and warm tones (`#f2ae43`, `#db902b`, `#bf771b`, `#fce1a6`), preserving flat minimal styling. Database files (`application-x-sqlite3`) retain the cylinder disc stack.
+4. **Application Fallback (Inheritance)**:
+   - Removed custom application icons from Hikaide-Symbols; the theme now exclusively scopes to folders (`places`), files (`mimetypes`), and symbols (`actions`, `status`, `devices`, `categories`, `emblems`).
+   - Configured `Inherits=Adwaita,breeze,hicolor` in `index.theme` so launcher and window manager applications cleanly fall back to system Adwaita or Breeze icon sets.
+5. **Validation & Verification**:
+   - Tested under GTK3 and GTK4 icon theme lookup; all folder, file, and symbol icons resolve from Hikaide-Symbols, while applications resolve via inherited themes. All unit tests pass cleanly.

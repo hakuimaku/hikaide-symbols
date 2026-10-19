@@ -1,14 +1,11 @@
 # Hikaide-Symbols
 
-A GTK icon theme with graphite folders, folded paper files, and sculpted application icons.
+A GTK icon theme with graphite folders, folded paper files, and system symbols (applications fall back to Adwaita / Breeze).
 
-![Application overview](previews/overview-apps.png)
 ![Folder states](previews/folder-states.png)
 
 <details>
 <summary>All icon previews</summary>
-
-![Application icons](previews/preview-apps.png)
 
 ![Folder and places icons](previews/preview-places.png)
 

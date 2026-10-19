@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>libreoffice-startcenter</title>
-
-<path d="M12 4h29l12 12v43H12Z" fill="#419f64" /><path d="M15 7h23l12 12v37H15Z" fill="#e9eef3" /><path d="M41 4h12v12Z" fill="#419f64" /><g transform="translate(20 24) scale(1)"><path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h8" fill="none" stroke="#419f64" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-</svg>

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>Alacritty</title>
-
-<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#34414a"/><stop offset="1" stop-color="#182028"/></linearGradient></defs>
-<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
-<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
-<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
-<path d="m31 10-18 39 10-4 9-23 9 23 10 4-18-39Z" fill="#f28c64" />
-</svg>

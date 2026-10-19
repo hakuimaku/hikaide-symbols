@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>google-chrome</title>
-
-<circle cx="32" cy="33" r="27" fill="#000" opacity=".18"/><circle cx="32" cy="31" r="27" fill="#ed514d" /><path d="M32 31h27A27 27 0 0 1 18 55Z" fill="#f6cf45" /><path d="M32 31 18 55A27 27 0 0 1 8 17l14 23Z" fill="#24af70" /><circle cx="32" cy="31" r="13" fill="#f4f7fc" /><defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#50c7fc"/><stop offset="1" stop-color="#1262d4"/></linearGradient></defs><circle cx="32" cy="31" r="10.5" fill="url(#ink)" />
-</svg>

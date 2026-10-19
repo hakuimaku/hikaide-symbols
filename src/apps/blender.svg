@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>blender</title>
-
-<path d="M29 8 45 20 60 30q8 24-19 29Q19 62 18 43L5 48 1 42l19-15H7v-7h23L21 12Z" fill="#f28c28" /><ellipse cx="40" cy="38" rx="16" ry="13" fill="#f0f3f6"/><ellipse cx="40" cy="38" rx="11" ry="9" fill="#247fbd"/><ellipse cx="40" cy="38" rx="7" ry="6" fill="#1b334c"/>
-</svg>

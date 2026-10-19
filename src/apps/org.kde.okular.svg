@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>org.kde.okular</title>
-
-<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#83b6dc"/><stop offset="1" stop-color="#3e78a0"/></linearGradient></defs>
-<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
-<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
-<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
-<g transform="translate(16 15) scale(1.33)"><path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h8" fill="none" stroke="#f2f5fc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-</svg>

@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>floorp</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#a7a0ff"/><stop offset="1" stop-color="#4825a5"/></linearGradient></defs><circle cx="32" cy="33" r="24" fill="url(#ink)" /><path d="M18 8 20 19Q7 15 8 27C0 47 22 64 43 55 61 48 64 28 53 15l-1 15-9-12 3 16q-6-6-15-4l-9 7q8 10 20 3-7 19-25 8C3 38 14 30 22 28l8-8-9-2Z" fill="#6b65c7" /><path d="M12 31Q9 52 34 54 15 60 7 43Z" fill="#a7a0ff" />
-</svg>

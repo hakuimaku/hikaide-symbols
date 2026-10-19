@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>rawtherapee</title>
-
-<path d="M32 31  58.000 31.000 A26 26 0 0 1 48.211 51.328Z" fill="#f1459d" /><path d="M32 31  48.211 51.328 A26 26 0 0 1 26.214 56.348Z" fill="#f58342" /><path d="M32 31  26.214 56.348 A26 26 0 0 1 8.575 42.281Z" fill="#f9d541" /><path d="M32 31  8.575 42.281 A26 26 0 0 1 8.575 19.719Z" fill="#64c554" /><path d="M32 31  8.575 19.719 A26 26 0 0 1 26.214 5.652Z" fill="#2dcde1" /><path d="M32 31  26.214 5.652 A26 26 0 0 1 48.211 10.672Z" fill="#4269dd" /><path d="M32 31  48.211 10.672 A26 26 0 0 1 58.000 31.000Z" fill="#8d4bdf" /><circle cx="32" cy="31" r="11" fill="#28303b" />
-</svg>

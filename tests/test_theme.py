@@ -36,7 +36,6 @@ class ThemeTests(unittest.TestCase):
                     self.assertTrue((THEME / "scalable" / family / (name + ".svg")).is_file())
                     if family in {"actions", "status", "places", "devices"}:
                         self.assertTrue((THEME / "symbolic" / family / (name + "-symbolic.svg")).is_file())
-        self.assertGreaterEqual(len(list((THEME / "scalable/apps").glob("*.svg"))), 120)
         self.assertGreaterEqual(len(list((THEME / "scalable/mimetypes").glob("*.svg"))), 80)
 
     def test_build_is_deterministic(self):
@@ -151,18 +150,18 @@ class ThemeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             user, system = Path(tmp) / "user", Path(tmp) / "system"
             user.mkdir(); system.mkdir()
-            (system / "test.desktop").write_text("[Desktop Entry]\nName=System\nIcon=firefox\n")
-            (user / "test.desktop").write_text("[Desktop Entry]\nName=User\nIcon=Alacritty\nX-Flatpak=org.alacritty.Alacritty\n")
-            (system / "case.desktop").write_text("[Desktop Entry]\nName=Wrong case\nIcon=FIREFOX\n")
+            (system / "test.desktop").write_text("[Desktop Entry]\nName=System\nIcon=folder\n")
+            (user / "test.desktop").write_text("[Desktop Entry]\nName=User\nIcon=folder-documents\nX-Flatpak=org.example.App\n")
+            (system / "case.desktop").write_text("[Desktop Entry]\nName=Wrong case\nIcon=FOLDER\n")
             (system / "absolute.desktop").write_text("[Desktop Entry]\nName=Absolute\nIcon=/opt/test.png\n")
-            (system / "hidden.desktop").write_text("[Desktop Entry]\nName=Hidden\nIcon=firefox\nHidden=true\n")
-            (system / "lstopo.desktop").write_text("[Desktop Entry]\nName=Hardware Locality lstopo\nIcon=hwloc\n")
+            (system / "hidden.desktop").write_text("[Desktop Entry]\nName=Hidden\nIcon=folder\nHidden=true\n")
+            (system / "places.desktop").write_text("[Desktop Entry]\nName=Places\nIcon=folder-download\n")
             rows = scan([user, system])
             self.assertEqual(len(rows), 5)
-            self.assertTrue(next(r for r in rows if r["icon"] == "hwloc")["covered"])
+            self.assertTrue(next(r for r in rows if r["icon"] == "folder-download")["covered"])
             row = next(r for r in rows if r["name"] == "User")
-            self.assertEqual(row["icon"], "Alacritty")
-            self.assertEqual(row["flatpak_id"], "org.alacritty.Alacritty")
+            self.assertEqual(row["icon"], "folder-documents")
+            self.assertEqual(row["flatpak_id"], "org.example.App")
             self.assertTrue(row["covered"])
             self.assertFalse(next(r for r in rows if r["name"] == "Wrong case")["covered"])
             self.assertFalse(next(r for r in rows if r["name"] == "Absolute")["covered"])
@@ -184,7 +183,7 @@ class ThemeTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 install(root)
             install(root, replace=True)
-            self.assertTrue((target / "scalable/apps/org.mozilla.firefox.svg").is_symlink())
+            self.assertTrue((target / "scalable/places/desktop.svg").is_symlink())
             if shutil.which("gtk-update-icon-cache"):
                 self.assertTrue((target / "icon-theme.cache").is_file())
             uninstall(root)

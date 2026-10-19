@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>neovim</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#4ee1a3"/><stop offset="1" stop-color="#138d70"/></linearGradient></defs><path d="M9 4 49 49V4l9 9v39l-10 8L9 16v44l-8-8V13Z" fill="url(#ink)" /><path d="m9 4 10 10v38L9 60Z" fill="#3e89c7" /><path d="M49 4 58 13v39l-9 8Z" fill="#176d4b" />
-</svg>

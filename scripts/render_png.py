@@ -59,7 +59,7 @@ def contact_sheet(family, theme=THEME):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("families", nargs="*", default=["places", "mimetypes", "apps", "devices", "status", "actions", "categories", "emblems"])
+    parser.add_argument("families", nargs="*", default=["places", "mimetypes", "devices", "status", "actions", "categories", "emblems"])
     args = parser.parse_args()
     for family in args.families:
         contact_sheet(family)

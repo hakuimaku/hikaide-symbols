@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "Hikaide-Symbols"
 THEME = ROOT / "dist" / NAME
-CONTEXTS = {"apps": "Applications", "mimetypes": "MimeTypes", "places": "Places",
+CONTEXTS = {"places": "Places", "mimetypes": "MimeTypes",
             "devices": "Devices", "status": "Status", "actions": "Actions",
             "categories": "Categories", "emblems": "Emblems"}
 

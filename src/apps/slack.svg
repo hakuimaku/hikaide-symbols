@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>slack</title>
-
-<rect x="9" y="24" width="22" height="9" rx="4" fill="#36c5f0" /><rect x="23" y="9" width="9" height="22" rx="4" fill="#36c5f0" /><rect x="34" y="9" width="9" height="22" rx="4" fill="#2eb67d" /><rect x="35" y="24" width="22" height="9" rx="4" fill="#2eb67d" /><rect x="35" y="35" width="22" height="9" rx="4" fill="#ecb22e" /><rect x="35" y="36" width="9" height="22" rx="4" fill="#ecb22e" /><rect x="23" y="36" width="9" height="22" rx="4" fill="#e01e5a" /><rect x="9" y="35" width="22" height="9" rx="4" fill="#e01e5a" />
-</svg>

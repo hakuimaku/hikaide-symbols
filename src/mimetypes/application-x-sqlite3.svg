@@ -6,5 +6,5 @@
 <path d="M17 5h24l11 11v37q0 5-5 5H17q-5 0-5-5V10q0-5 5-5Z" fill="url(#paper)"/>
 <path d="M41 5v8q0 4 4 4h7Z" fill="url(#fold)"/>
 <path d="M17 6h23M13 11v41" fill="none" stroke="#fff" stroke-opacity=".5"/>
-<g transform="translate(20 25)"><path d="M2 3h20v5H2Zm2 5v14h16V8M9 13h6" fill="none" stroke="#30333c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(20 25)"><path d="M2.5 5.5 a9.5 3 0 1 0 19 0 a9.5 3 0 1 0-19 0Z M2.5 8 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 12.5 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 17 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z" fill="#30333c"/></g>
 </svg>

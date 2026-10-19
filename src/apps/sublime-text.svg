@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>sublime-text</title>
-
-<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#49515a"/><stop offset="1" stop-color="#20252c"/></linearGradient></defs>
-<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
-<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
-<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
-<path d="m17 20 31-10v12l-19 6 19 5v12L17 55V43l20-6-20-5Z" fill="#ffa51e" />
-</svg>

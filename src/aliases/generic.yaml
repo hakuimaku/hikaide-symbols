@@ -27,6 +27,23 @@
     ],
     "edit-delete": [
       "user-trash-action"
+    ],
+    "application-exit": [
+      "system-log-out",
+      "exit",
+      "xfce4-session-logout"
+    ],
+    "help-about": [
+      "help-contents",
+      "help-info"
+    ],
+    "application-x-addon": [
+      "preferences-plugin",
+      "plugin"
+    ],
+    "document-send": [
+      "blueman-send",
+      "mail-send"
     ]
   },
   "symbolic/actions": {
@@ -63,6 +80,23 @@
     ],
     "edit-delete-symbolic": [
       "user-trash-action-symbolic"
+    ],
+    "application-exit-symbolic": [
+      "system-log-out-symbolic",
+      "exit-symbolic",
+      "xfce4-session-logout-symbolic"
+    ],
+    "help-about-symbolic": [
+      "help-contents-symbolic",
+      "help-info-symbolic"
+    ],
+    "application-x-addon-symbolic": [
+      "preferences-plugin-symbolic",
+      "plugin-symbolic"
+    ],
+    "document-send-symbolic": [
+      "blueman-send-symbolic",
+      "mail-send-symbolic"
     ]
   },
   "scalable/status": {
@@ -102,15 +136,45 @@
       "battery-full-charged",
       "battery-level-100-charged"
     ],
+    "network-wireless-signal-excellent": [
+      "nm-signal-100",
+      "network-wireless-100",
+      "network-wifi",
+      "wifi",
+      "nm-device-wireless"
+    ],
     "network-wireless-signal-good": [
       "network-wireless-connected",
-      "network-wireless-acquiring"
+      "network-wireless-acquiring",
+      "nm-signal-75",
+      "network-wireless-75"
+    ],
+    "network-wireless-signal-ok": [
+      "nm-signal-50",
+      "network-wireless-50"
+    ],
+    "network-wireless-signal-weak": [
+      "nm-signal-25",
+      "network-wireless-25"
+    ],
+    "network-wireless-offline": [
+      "nm-signal-00",
+      "network-wireless-0",
+      "nm-no-connection",
+      "network-wireless-disabled"
     ],
     "network-wired": [
       "network-wired-connected"
     ],
     "bluetooth-active": [
-      "bluetooth-acquiring"
+      "bluetooth-acquiring",
+      "blueman-tray",
+      "blueman-active",
+      "bluetooth-paired"
+    ],
+    "bluetooth-disabled": [
+      "blueman-disabled",
+      "bluetooth-disconnected"
     ]
   },
   "symbolic/status": {
@@ -150,15 +214,45 @@
       "battery-full-charged-symbolic",
       "battery-level-100-charged-symbolic"
     ],
+    "network-wireless-signal-excellent-symbolic": [
+      "nm-signal-100-symbolic",
+      "network-wireless-100-symbolic",
+      "network-wifi-symbolic",
+      "wifi-symbolic",
+      "nm-device-wireless-symbolic"
+    ],
     "network-wireless-signal-good-symbolic": [
       "network-wireless-connected-symbolic",
-      "network-wireless-acquiring-symbolic"
+      "network-wireless-acquiring-symbolic",
+      "nm-signal-75-symbolic",
+      "network-wireless-75-symbolic"
+    ],
+    "network-wireless-signal-ok-symbolic": [
+      "nm-signal-50-symbolic",
+      "network-wireless-50-symbolic"
+    ],
+    "network-wireless-signal-weak-symbolic": [
+      "nm-signal-25-symbolic",
+      "network-wireless-25-symbolic"
+    ],
+    "network-wireless-offline-symbolic": [
+      "nm-signal-00-symbolic",
+      "network-wireless-0-symbolic",
+      "nm-no-connection-symbolic",
+      "network-wireless-disabled-symbolic"
     ],
     "network-wired-symbolic": [
       "network-wired-connected-symbolic"
     ],
     "bluetooth-active-symbolic": [
-      "bluetooth-acquiring-symbolic"
+      "bluetooth-acquiring-symbolic",
+      "blueman-tray-symbolic",
+      "blueman-active-symbolic",
+      "bluetooth-paired-symbolic"
+    ],
+    "bluetooth-disabled-symbolic": [
+      "blueman-disabled-symbolic",
+      "bluetooth-disconnected-symbolic"
     ]
   }
 }

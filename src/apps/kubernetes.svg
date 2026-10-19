@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>kubernetes</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#559cff"/><stop offset="1" stop-color="#2457cc"/></linearGradient></defs><path d="m32 2 23 10 8 26-17 23H18L1 38l8-26Z" fill="url(#ink)" /><circle cx="32" cy="31" r="16" fill="none" stroke="#f5f8ff" stroke-width="2.6"/><path d="M32 9v44" fill="none" stroke="#fff" stroke-width="2.6" transform="rotate(0 32 31)"/><path d="M32 9v44" fill="none" stroke="#fff" stroke-width="2.6" transform="rotate(51.43 32 31)"/><path d="M32 9v44" fill="none" stroke="#fff" stroke-width="2.6" transform="rotate(102.86 32 31)"/><path d="M32 9v44" fill="none" stroke="#fff" stroke-width="2.6" transform="rotate(154.29 32 31)"/><circle cx="32" cy="31" r="4" fill="#559cff" />
-</svg>

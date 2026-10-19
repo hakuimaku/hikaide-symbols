@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>gimp</title>
-
-<path d="M7 20q17 8 42-9l6-8q7 30-10 43-14 12-34-1Q1 40 7 20Z" fill="#716a58" /><ellipse cx="23" cy="30" rx="7" ry="9" fill="#f3eee5"/><ellipse cx="40" cy="26" rx="8" ry="10" fill="#f3eee5"/><circle cx="25" cy="31" r="3" fill="#252b30" /><circle cx="39" cy="27" r="3" fill="#252b30" /><path d="M10 39q16 11 30-2" fill="none" stroke="#282e34" stroke-width="2.5"/><path d="m41 39 18 17-2 5-20-19Z" fill="#bf7734" />
-</svg>

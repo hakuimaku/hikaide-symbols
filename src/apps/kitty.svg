@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>kitty</title>
-
-<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#444b55"/><stop offset="1" stop-color="#252b34"/></linearGradient></defs>
-<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
-<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
-<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
-<path d="M17 25 15 13l12 8h10l12-8-2 12q11 24-15 25-26-1-15-25Z" fill="#d6c09a" /><circle cx="25" cy="33" r="2" fill="#334354" /><circle cx="39" cy="33" r="2" fill="#334354" /><path d="m29 39 3 3 3-3" fill="#80664c" />
-</svg>

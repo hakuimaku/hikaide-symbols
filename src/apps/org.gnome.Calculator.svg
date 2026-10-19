@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>org.gnome.Calculator</title>
-
-<defs><linearGradient id="plate" x2=".25" y2="1"><stop stop-color="#a5b8cc"/><stop offset="1" stop-color="#576d86"/></linearGradient></defs>
-<rect x="6" y="7" width="52" height="52" rx="12" fill="#000" opacity=".2"/>
-<rect x="6" y="5" width="52" height="52" rx="12" fill="url(#plate)"/>
-<path d="M18 6h28q10 0 11 10" fill="none" stroke="#fff" stroke-opacity=".24"/>
-<g transform="translate(16 15) scale(1.33)"><path d="M3 1h18v22H3ZM6 4h12v5H6ZM6 13h3m6 0h3M6 18h3m6-2v5m-2-2h4" fill="none" stroke="#f2f5fc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-</svg>

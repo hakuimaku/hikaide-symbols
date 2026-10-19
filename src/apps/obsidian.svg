@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
-<title>obsidian</title>
-
-<defs><linearGradient id="ink" x2=".4" y2="1"><stop stop-color="#c09aff"/><stop offset="1" stop-color="#5b31b9"/></linearGradient></defs><path d="m34 3 16 11 8 24-17 23-25-7-9-19 10-23Z" fill="url(#ink)" /><path d="m34 3-7 24 14 34 1-30Z" fill="#9d6ce7" /><path d="m7 35 20-8-11 27Z" fill="#7150b6" /><path d="m42 31 16 7-8-24Z" fill="#cba4ff" />
-</svg>

@@ -1,8 +1,7 @@
 # Artwork provenance
 
 All SVG artwork under `src/` was drawn for Hikaide-Symbols as vector geometry
-in `scripts/draw_icons.py` and `scripts/draw_apps.py`. No upstream application
-SVGs, icon-theme assets, raster images, fonts, or downloaded logos are included
+in `scripts/draw_icons.py`. No upstream icon-theme assets, raster images, fonts,
 in the installable theme. Generated artwork and project scripts use the root
 MIT license. Brand names identify the intended applications; trademarks remain
 with their respective owners. This theme is not affiliated with those projects.

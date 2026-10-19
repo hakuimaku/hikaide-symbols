@@ -12,7 +12,7 @@ P = {
     "minus": "M3 12h18",
     "folder": "M3 8V6h6l3 3h9v12H3Z",
     "folder-open": "M3 12V6h6l3 3h9v3M3 21l-2-9h22l-4 9Z",
-    "home": "M2 11 12 2l10 9h-4v11h-5v-7h-3v7H5V11Z",
+    "home": "M12 2.5 2 11.5h3v9.5h5v-7.5h4v7.5h5v-9.5h3Z",
     "monitor": "M2 3h20v14H2ZM8 22h8m-4-5v5",
     "document": "M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h8",
     "download": "M10 2h4v11h5l-7 7-7-7h5ZM3 23h18",
@@ -26,6 +26,12 @@ P = {
     "code": "M7 6 1 12l6 6M17 6l6 6-6 6M14 2l-4 20",
     "briefcase": "M2 7h20v15H2Zm6 0V2h8v5M2 13h20m-11 0v3h2v-3",
     "archive": "M2 3h20v5H2Zm2 5v14h16V8M9 13h6",
+    "archive-stack": "M2.5 5.5 a9.5 3 0 1 0 19 0 a9.5 3 0 1 0-19 0Z M2.5 8 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 12.5 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 17 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z",
+    "exit": "M9 3H3v18h6m5-14 5 5-5 5m5-5H7",
+    "document-properties": "M4 2h9l5 5v15H4Zm9 0v5h5M8 12h8m-4-2v4M8 17h8m-6-2v4",
+    "addon": "M4 7h4a3 3 0 0 1 6 0h4v4a3 3 0 0 1 0 6v4h-4a3 3 0 0 0-6 0h-4v-4a3 3 0 0 0 0-6Z",
+    "help-about": "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 7v8m0-12v1.5",
+    "send": "m2 12 20-9-9 20-3-8Zm8 3 11-11",
     "trash": "M5 7v15h14V7M2 5h20M8 5V2h8v3M9 10v8m6-8v8",
     "network": "M12 3 3 20h18ZM15 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6 20a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm18 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
     "share": "M5 12 19 4M5 12l14 8M8 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM22 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm0 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
@@ -161,7 +167,10 @@ def places():
                 body += '<path d="m28 30-3-6 6-2 4 8m0 0 4-5 6 3-2 4" fill="none" class="ColorScheme-Highlight" stroke="currentColor" stroke-width="2.6"/>'
             decorated = name not in {"folder", "folder-open"}
             if decorated:
-                body += f'<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor">{glyph(symbol, width=width)}</g>'
+                if symbol == "home":
+                    body += f'<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" fill="currentColor"><path d="{P[symbol]}" fill="currentColor"/></g>'
+                else:
+                    body += f'<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor">{glyph(symbol, width=width)}</g>'
             body += primitive("folder", "corner")
             write(family, name, body, accent=decorated)
         symbolic("places", name, symbol)
@@ -185,7 +194,10 @@ def places():
 
 def symbolic(family, name, symbol):
     # Dedicated 16px geometry: remove surfaces, folds, gradients, status dots and shadows.
-    g = glyph(symbol, width=2.57)
+    if symbol == "home":
+        g = f'<path d="{P[symbol]}" fill="currentColor"/>'
+    else:
+        g = glyph(symbol, width=2.57)
     if name in {"object-select", "emblem-default", "folder-favorites", "folder-important"}:
         g = g.replace('<path ', '<path gpa:stroke="accent" ')
     body = f'<g transform="translate(1 1) scale(.5833333333)" color="#2e3436">{g}</g>'
@@ -243,7 +255,7 @@ def mimetypes():
         "audio-x-generic": ("music", "audio-mpeg audio-flac audio-x-flac audio-x-wav audio-wav audio-vnd.wave audio-aac audio-ogg application-ogg audio-x-m4a audio-mp4 audio-alac audio-aiff audio-x-aiff audio-opus audio-x-vorbis+ogg"),
         "audio-midi": ("wave", "audio-x-midi"), "application-x-cue": ("disc", "application-x-cdrdao-toc"),
         "video-x-generic": ("play", "video-mp4 video-x-matroska video-x-msvideo video-quicktime video-x-ms-wmv video-x-flv video-webm video-m4v video-x-m4v video-3gpp video-mpeg video-ogg video-x-ogm+ogg"),
-        "application-zip": ("archive", "application-x-rar application-vnd.rar application-x-7z-compressed application-x-tar application-gzip application-x-gzip application-x-xz application-x-bzip application-x-bzip2 application-zstd application-x-zstd application-x-compressed-tar application-x-xz-compressed-tar application-x-bzip-compressed-tar application-x-lzma application-x-lz4"),
+        "application-zip": ("archive-box", "application-x-rar application-vnd.rar application-x-7z-compressed application-x-tar application-gzip application-x-gzip application-x-xz application-x-bzip application-x-bzip2 application-zstd application-x-zstd application-x-compressed-tar application-x-xz-compressed-tar application-x-bzip-compressed-tar application-x-lzma application-x-lz4 application-x-archive application-x-cpio application-x-lha application-x-lzh application-x-lzop application-x-zoo application-x-ace application-x-gtar application-x-tarz package-x-generic"),
         "application-x-iso9660-image": ("disc", "application-x-cd-image application-x-raw-disk-image application-x-apple-diskimage"),
         "application-octet-stream": ("chip", "application-x-firmware"),
         "text-html": ("code", "application-xhtml+xml"), "text-css": ("braces", "text-x-scss text-x-sass"),
@@ -263,21 +275,34 @@ def mimetypes():
         "application-vnd.flatpak": ("cube", "application-vnd.flatpak.ref application-vnd.flatpak.repo"),
         "application-x-rpm": ("box", "application-vnd.debian.binary-package application-x-deb application-x-alpm-package application-x-archlinux-package"),
         "application-x-font-ttf": ("T", "font-ttf font-otf application-x-font-otf application-font-woff font-woff font-woff2"),
-        "application-x-sqlite3": ("archive", "application-vnd.sqlite3 application-sql text-x-sql"),
+        "application-x-sqlite3": ("archive-stack", "application-vnd.sqlite3 application-sql text-x-sql"),
         "application-x-bittorrent": ("download", ""),
     }
     aliases = {}
     for name, (symbol, names) in data.items():
-        if symbol == "checker":
-            g = ''.join(f'<rect x="{2+x*4}" y="{2+y*4}" width="4" height="4" fill="#30333c"/>' for x in range(5) for y in range(5) if (x+y)%2 == 0)
+        if name == "application-zip":
+            box_body = ('<path d="M4 22h56v31q0 6-6 6H10q-6 0-6-6Z" fill="#ea9f30"/>'
+                        '<path d="M60 47 47 59h7q6 0 6-6Z" fill="#b0630b"/>'
+                        '<rect x="28" y="13" width="8" height="46" fill="#fce5b4"/>'
+                        '<rect x="24" y="34" width="16" height="6.5" rx="3.25" fill="#9c5406"/>'
+                        '<rect x="2" y="13" width="60" height="13" rx="3.5" fill="#d6871e"/>'
+                        '<rect x="28" y="13" width="8" height="13" fill="#fce5b4"/>')
+            write("mimetypes", name, box_body)
+            for size in (16, 24):
+                write(f"{size}x{size}/mimetypes", name, box_body)
         else:
-            g = glyph(symbol, "#30333c", 2.5) if symbol in P else lettering(symbol)
-        body = primitive("file") + f'<g transform="translate(20 25)">{g}</g>'
-        write("mimetypes", name, body)
-        for size in (16, 24):
-            body = '<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="#e1e3e9"/><path d="M41 4v11h11" fill="#999da8"/>'
-            body += f'<g transform="translate(18 24) scale(1.16)">{g}</g>'
-            write(f"{size}x{size}/mimetypes", name, body)
+            if symbol == "checker":
+                g = ''.join(f'<rect x="{2+x*4}" y="{2+y*4}" width="4" height="4" fill="#30333c"/>' for x in range(5) for y in range(5) if (x+y)%2 == 0)
+            elif symbol == "archive-stack":
+                g = f'<path d="{P[symbol]}" fill="#30333c"/>'
+            else:
+                g = glyph(symbol, "#30333c", 2.5) if symbol in P else lettering(symbol)
+            body = primitive("file") + f'<g transform="translate(20 25)">{g}</g>'
+            write("mimetypes", name, body)
+            for size in (16, 24):
+                body = '<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="#e1e3e9"/><path d="M41 4v11h11" fill="#999da8"/>'
+                body += f'<g transform="translate(18 24) scale(1.16)">{g}</g>'
+                write(f"{size}x{size}/mimetypes", name, body)
         if names:
             aliases[name] = names.split()
     save_aliases("mimetypes", {f"{v}/mimetypes": aliases for v in ("scalable", "16x16", "24x24")})
@@ -316,7 +341,9 @@ def system_families():
         "media-skip-forward": "next", "media-skip-backward": "previous", "zoom-in": "zoom-in", "zoom-out": "zoom-out",
         "zoom-fit-best": "fit", "window-minimize": "minus", "window-maximize": "square", "window-restore": "copy",
         "open-menu": "list", "pan-start": "left", "pan-end": "right", "pan-up": "up", "pan-down": "down",
-        "object-select": "check", "process-stop": "error", "system-shutdown": "power", "system-lock-screen": "lock"}
+        "object-select": "check", "process-stop": "error", "system-shutdown": "power", "system-lock-screen": "lock",
+        "application-exit": "exit", "document-properties": "document-properties", "application-x-addon": "addon",
+        "help-about": "help-about", "configure": "gear", "document-send": "send"}
     P.update({"left": "m15 3-9 9 9 9", "right": "m9 3 9 9-9 9", "up": "m3 15 9-9 9 9", "down": "m3 9 9 9 9-9",
               "save-as": "M2 2h17l3 3v7M2 2v20h8M6 2v7h11V2m-4 16 7-7 3 3-7 7-5 1Z",
               "plus": "M12 3v18M3 12h18", "minus": "M3 12h18", "square": "M3 3h18v18H3Z",
@@ -327,7 +354,10 @@ def system_families():
               "zoom-in": P["search"] + "M6 10h8m-4-4v8", "zoom-out": P["search"] + "M6 10h8",
               "fit": "M3 9V3h6m6 0h6v6m0 6v6h-6m-6 0H3v-6"})
     for name, symbol in actions.items():
-        write("actions", name, f'<g transform="translate(10 10) scale(1.83)">{glyph(symbol, "#8d99a9", 2.4)}</g>')
+        if symbol == "home":
+            write("actions", name, f'<g transform="translate(10 10) scale(1.83)"><path d="{P[symbol]}" fill="#8d99a9"/></g>')
+        else:
+            write("actions", name, f'<g transform="translate(10 10) scale(1.83)">{glyph(symbol, "#8d99a9", 2.4)}</g>')
         symbolic("actions", name, symbol)
     categories = dict(zip(
         "applications-accessories applications-development applications-games applications-graphics applications-internet applications-multimedia applications-office applications-system applications-utilities preferences-desktop preferences-system".split(),
@@ -352,8 +382,16 @@ def system_families():
         "open-menu-symbolic": ["application-menu-symbolic"], "window-close-symbolic": ["dialog-close-symbolic"],
         "edit-find-symbolic": ["system-search-symbolic"], "pan-end-symbolic": ["pan-start-symbolic-rtl"], "pan-start-symbolic": ["pan-end-symbolic-rtl"]}}
     for variant, suffix in (("scalable", ""), ("symbolic", "-symbolic")):
-        action_aliases = {"go-forward": ["go-next"], "go-back": ["go-previous"], "view-grid": ["view-grid-large", "view-grid-small"],
-                          "view-list": ["view-list-bullet"], "edit-delete": ["user-trash-action"], "window-close": ["window-close-button"]}
+        action_aliases = {
+            "go-forward": ["go-next"], "go-back": ["go-previous"],
+            "view-grid": ["view-grid-large", "view-grid-small"],
+            "view-list": ["view-list-bullet"], "edit-delete": ["user-trash-action"],
+            "window-close": ["window-close-button"],
+            "application-exit": ["system-log-out", "exit", "xfce4-session-logout"],
+            "help-about": ["help-contents", "help-info"],
+            "application-x-addon": ["preferences-plugin", "plugin"],
+            "document-send": ["blueman-send", "mail-send"],
+        }
         target = manifests[f"{variant}/actions"]
         for k, names in action_aliases.items():
             target.setdefault(k + suffix, []).extend(n + suffix for n in names)
@@ -363,9 +401,32 @@ def system_families():
             target.setdefault("battery-" + state + suffix, []).append(f"battery-level-{level}" + suffix)
             target.setdefault("battery-charging" + suffix, []).append(f"battery-level-{level}-charging" + suffix)
         target.setdefault("battery-full" + suffix, []).extend(n + suffix for n in ["battery-full-charged", "battery-level-100-charged"])
-        target.setdefault("network-wireless-signal-good" + suffix, []).extend(n + suffix for n in ["network-wireless-connected", "network-wireless-acquiring"])
-        target.setdefault("network-wired" + suffix, []).append("network-wired-connected" + suffix)
-        target.setdefault("bluetooth-active" + suffix, []).append("bluetooth-acquiring" + suffix)
+        status_aliases = {
+            "network-wireless-signal-excellent": [
+                "nm-signal-100", "network-wireless-100", "network-wifi", "wifi", "nm-device-wireless"
+            ],
+            "network-wireless-signal-good": [
+                "network-wireless-connected", "network-wireless-acquiring", "nm-signal-75", "network-wireless-75"
+            ],
+            "network-wireless-signal-ok": [
+                "nm-signal-50", "network-wireless-50"
+            ],
+            "network-wireless-signal-weak": [
+                "nm-signal-25", "network-wireless-25"
+            ],
+            "network-wireless-offline": [
+                "nm-signal-00", "network-wireless-0", "nm-no-connection", "network-wireless-disabled"
+            ],
+            "network-wired": ["network-wired-connected"],
+            "bluetooth-active": [
+                "bluetooth-acquiring", "blueman-tray", "blueman-active", "bluetooth-paired"
+            ],
+            "bluetooth-disabled": [
+                "blueman-disabled", "bluetooth-disconnected"
+            ],
+        }
+        for k, names in status_aliases.items():
+            target.setdefault(k + suffix, []).extend(n + suffix for n in names)
     save_aliases("generic", manifests)
 
 

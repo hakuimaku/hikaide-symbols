@@ -119,7 +119,17 @@
       "application-x-xz-compressed-tar",
       "application-x-bzip-compressed-tar",
       "application-x-lzma",
-      "application-x-lz4"
+      "application-x-lz4",
+      "application-x-archive",
+      "application-x-cpio",
+      "application-x-lha",
+      "application-x-lzh",
+      "application-x-lzop",
+      "application-x-zoo",
+      "application-x-ace",
+      "application-x-gtar",
+      "application-x-tarz",
+      "package-x-generic"
     ],
     "application-x-iso9660-image": [
       "application-x-cd-image",
@@ -346,7 +356,17 @@
       "application-x-xz-compressed-tar",
       "application-x-bzip-compressed-tar",
       "application-x-lzma",
-      "application-x-lz4"
+      "application-x-lz4",
+      "application-x-archive",
+      "application-x-cpio",
+      "application-x-lha",
+      "application-x-lzh",
+      "application-x-lzop",
+      "application-x-zoo",
+      "application-x-ace",
+      "application-x-gtar",
+      "application-x-tarz",
+      "package-x-generic"
     ],
     "application-x-iso9660-image": [
       "application-x-cd-image",
@@ -573,7 +593,17 @@
       "application-x-xz-compressed-tar",
       "application-x-bzip-compressed-tar",
       "application-x-lzma",
-      "application-x-lz4"
+      "application-x-lz4",
+      "application-x-archive",
+      "application-x-cpio",
+      "application-x-lha",
+      "application-x-lzh",
+      "application-x-lzop",
+      "application-x-zoo",
+      "application-x-ace",
+      "application-x-gtar",
+      "application-x-tarz",
+      "package-x-generic"
     ],
     "application-x-iso9660-image": [
       "application-x-cd-image",
