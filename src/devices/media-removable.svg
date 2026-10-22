@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>media-removable</title>
 <style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<rect x="9" y="10" width="46" height="46" rx="12" fill="#000" opacity=".14"/><defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="#d6dbe2"/><stop offset="1" stop-color="#808b9b"/></linearGradient></defs><g transform="translate(11 10) scale(1.75)"><path d="M9 1h6v6h3v16H6V7h3Zm2 2v2m2-2v2" fill="none" stroke="url(#metal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="50" cy="49" r="3" class="ColorScheme-Highlight" fill="currentColor"/>
+<rect x="9" y="10" width="46" height="46" rx="12" fill="#000" opacity=".14"/><defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="#d6dbe2"/><stop offset="1" stop-color="#808b9b"/></linearGradient></defs><g transform="translate(11 10) scale(1.75)"><path d="m5 4-3 12v6h20v-6L19 4ZM2 16h20m-5 3h1" fill="none" stroke="url(#metal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="50" cy="49" r="3" class="ColorScheme-Highlight" fill="currentColor"/>
 </svg>

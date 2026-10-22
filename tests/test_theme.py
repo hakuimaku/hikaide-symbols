@@ -51,6 +51,9 @@ class ThemeTests(unittest.TestCase):
             for file in (THEME / variant / "places").glob("*.svg"):
                 if file.is_symlink():
                     continue
+                if file.stem.startswith("user-trash"):
+                    self.assertIn("ColorScheme-Highlight", file.read_text(), file)
+                    continue
                 root = ET.fromstring(file.read_text())
                 self.assertFalse(any(el.tag.endswith(("Gradient", "filter")) for el in root.iter()), file)
                 circles = [el for el in root.iter() if el.tag.endswith("}circle")]

@@ -86,7 +86,7 @@ Symbolic icons use GTK foreground and semantic colors. Four symbolic icons also 
 | --- | ---: | ---: |
 | Places | 30 | 57 |
 | File types | 50 | 197 |
-| Devices | 27 | 27 |
+| Devices | 27 | 43 |
 | Status | 29 | 77 |
 | Actions | 52 | 73 |
 | Categories | 11 | 11 |
@@ -94,7 +94,7 @@ Symbolic icons use GTK foreground and semantic colors. Four symbolic icons also 
 
 Application icons are not custom-drawn; the theme inherits from `Adwaita,breeze,hicolor` so applications fall back to system and desktop icons cleanly.
 
-There are also 159 canonical symbolic icons and optimized 16/24 px variants for folders and file types. The generated theme contains 528 SVG files and 689 relative symlink aliases: 1,217 SVG paths in total. These counts include size variants and aliases, rather than 1,217 distinct designs.
+There are also 159 canonical symbolic icons and optimized 16/24 px variants for folders and file types. The generated theme contains 528 SVG files and 721 relative symlink aliases: 1,249 SVG paths in total. These counts include size variants and aliases, rather than 1,249 distinct designs.
 
 Coverage varies by installed applications. Run the local launcher scan after building:
 

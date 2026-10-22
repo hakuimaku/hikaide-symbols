@@ -11,7 +11,7 @@ unchecked session tests below are not claimed as passed.
 | --- | ---: | ---: |
 | Places | 30 | 57 |
 | Mimetypes | 50 | 197 |
-| Devices | 27 | 27 |
+| Devices | 27 | 43 |
 | Status | 29 | 77 |
 | Actions | 52 | 73 |
 | Categories | 11 | 11 |
@@ -20,8 +20,8 @@ unchecked session tests below are not claimed as passed.
 Applications fall back to `Adwaita,breeze,hicolor` via theme inheritance.
 
 Additionally: 159 canonical symbolic SVGs, 16/24 px optimized places/mimetypes,
-689 relative symlink aliases across all directories. The installable tree has
-528 regular SVG files and 1,217 SVG paths in total. File counts include size
+721 relative symlink aliases across all directories. The installable tree has
+528 regular SVG files and 1,249 SVG paths in total. File counts include size
 variants and reused concepts; they are not a count of distinct designs.
 
 The frozen [required-icon fixture](../tests/required-icons.json) covers all

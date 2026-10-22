@@ -145,6 +145,30 @@ def primitive(family, name="shell"):
     return (ROOT / "src/primitives" / family / f"{name}.svg").read_text()
 
 
+def trash_body(name, width=2.3):
+    is_full = name == "user-trash-full"
+    stroke_w = "2.8" if width > 2.5 else "2.6"
+    handle_w = "3.5" if width > 2.5 else "3"
+
+    parts = []
+    if is_full:
+        parts.append('<path d="m22 16-4-8 9-3 5 11" fill="#f0f0f3"/>')
+        parts.append('<path d="m33 16 6-9 9 4-5 9" fill="#e1e3e9"/>')
+        parts.append('<path d="m25 13 9-5 7 5" fill="#bfc1ca"/>')
+        parts.append('<g transform="rotate(-12 12 14)">')
+        parts.append(f'<path d="M24 10V6q0-2 2-2h12q2 0 2 2v4" fill="none" stroke="#414345" stroke-width="{handle_w}" stroke-linecap="round" stroke-linejoin="round"/>')
+        parts.append('<rect x="10" y="11" width="44" height="6" rx="2.5" fill="#414345"/>')
+        parts.append('</g>')
+    else:
+        parts.append(f'<path d="M24 10V6q0-2 2-2h12q2 0 2 2v4" fill="none" stroke="#414345" stroke-width="{handle_w}" stroke-linecap="round" stroke-linejoin="round"/>')
+        parts.append('<rect x="10" y="11" width="44" height="6" rx="2.5" fill="#414345"/>')
+
+    parts.append('<path d="M14 16h36l-3.5 38q-.5 4-4.5 4H22q-4 0-4.5-4Z" fill="#303233"/>')
+    parts.append('<path d="M18 54l-.5 4q-.5 4 4.5 4h20q4 0 4.5-4l-.5-4Z" fill="#17191a"/>')
+    parts.append(f'<g class="ColorScheme-Highlight" stroke="currentColor"><path d="M26 24v22M32 24v22M38 24v22" fill="none" stroke="currentColor" stroke-width="{stroke_w}" stroke-linecap="round"/></g>')
+    return "".join(parts)
+
+
 def places():
     data = {
         "folder": "folder", "folder-open": "folder-open", "user-home": "home", "user-desktop": "monitor",
@@ -159,6 +183,10 @@ def places():
     shell = primitive("folder")
     for name, symbol in data.items():
         for family, width in (("places", 2.3), ("16x16/places", 2.7), ("24x24/places", 2.7)):
+            if name in {"user-trash", "user-trash-full"}:
+                body = trash_body(name, width)
+                write(family, name, body, accent=True)
+                continue
             body = shell
             if name == "folder-open":
                 body += '<path d="M5 23q0-3 3-3h48q3 0 3 3v27H5Z" fill="#202223"/>'
@@ -311,7 +339,7 @@ def mimetypes():
 def system_families():
     devices = dict(zip(
         "computer computer-laptop computer-desktop drive-harddisk drive-harddisk-system drive-removable-media drive-optical media-flash media-removable camera-photo camera-video audio-card audio-headphones audio-headset audio-speakers input-keyboard input-mouse input-touchpad input-gaming phone tablet printer scanner battery network-wired network-wireless bluetooth".split(),
-        "monitor laptop monitor drive drive usb disc usb usb camera video-camera chip headphones headphones speaker keyboard mouse touchpad gamepad phone tablet printer scanner battery ethernet wifi bluetooth".split()))
+        "monitor laptop monitor drive drive drive disc drive drive camera video-camera chip headphones headphones speaker keyboard mouse touchpad gamepad phone tablet printer scanner battery ethernet wifi bluetooth".split()))
     for name, symbol in devices.items():
         body = '<rect x="9" y="10" width="46" height="46" rx="12" fill="#000" opacity=".14"/>'
         body += '<defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="#d6dbe2"/><stop offset="1" stop-color="#808b9b"/></linearGradient></defs>'
@@ -426,6 +454,22 @@ def system_families():
             ],
         }
         for k, names in status_aliases.items():
+            target.setdefault(k + suffix, []).extend(n + suffix for n in names)
+        device_aliases = {
+            "drive-harddisk": [
+                "drive", "drive-harddisk-solidstate", "drive-harddisk-root", "drive-partition"
+            ],
+            "drive-removable-media": [
+                "drive-removable-media-usb", "drive-removable-media-usb-pendrive", "drive-removable",
+                "drive-harddisk-usb", "usbpendrive", "media-removable-usb", "media-usb"
+            ],
+            "media-flash": [
+                "media-flash-sd", "media-flash-sd-mmc", "media-flash-memory-stick",
+                "media-flash-smart-media", "media-memory"
+            ],
+        }
+        target = manifests.setdefault(f"{variant}/devices", {})
+        for k, names in device_aliases.items():
             target.setdefault(k + suffix, []).extend(n + suffix for n in names)
     save_aliases("generic", manifests)
 
