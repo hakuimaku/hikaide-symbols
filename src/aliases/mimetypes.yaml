@@ -6,7 +6,10 @@
       "text-richtext",
       "application-rtf",
       "application-x-empty",
-      "text-x-log"
+      "application-x-zerosize",
+      "text-x-log",
+      "text-x-patch",
+      "text-x-diff"
     ],
     "application-msword": [
       "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -22,13 +25,17 @@
       "application-x-pdf"
     ],
     "text-markdown": [
-      "text-x-markdown"
+      "text-x-markdown",
+      "text-x-readme"
     ],
     "application-vnd.oasis.opendocument.text": [
       "application-vnd.oasis.opendocument.text-template"
     ],
     "application-vnd.oasis.opendocument.spreadsheet": [
-      "application-vnd.oasis.opendocument.spreadsheet-template"
+      "application-vnd.oasis.opendocument.spreadsheet-template",
+      "text-csv",
+      "text-tab-separated-values",
+      "x-office-spreadsheet"
     ],
     "application-vnd.oasis.opendocument.presentation": [
       "application-vnd.oasis.opendocument.presentation-template"
@@ -42,7 +49,8 @@
       "image-tiff",
       "image-bmp",
       "image-x-icon",
-      "image-avif"
+      "image-avif",
+      "image-vnd.microsoft.icon"
     ],
     "image-raw": [
       "image-x-dcraw",
@@ -140,7 +148,8 @@
       "application-x-firmware"
     ],
     "text-html": [
-      "application-xhtml+xml"
+      "application-xhtml+xml",
+      "text-x-qml"
     ],
     "text-css": [
       "text-x-scss",
@@ -174,12 +183,15 @@
     ],
     "text-x-shellscript": [
       "application-x-shellscript",
-      "text-x-script"
+      "text-x-script",
+      "text-x-makefile"
     ],
     "text-x-config": [
       "application-x-desktop",
       "text-x-ini",
-      "application-x-wine-extension-ini"
+      "application-x-wine-extension-ini",
+      "application-x-theme",
+      "text-x-cmake"
     ],
     "application-json": [
       "application-ld+json"
@@ -243,7 +255,10 @@
       "text-richtext",
       "application-rtf",
       "application-x-empty",
-      "text-x-log"
+      "application-x-zerosize",
+      "text-x-log",
+      "text-x-patch",
+      "text-x-diff"
     ],
     "application-msword": [
       "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -259,13 +274,17 @@
       "application-x-pdf"
     ],
     "text-markdown": [
-      "text-x-markdown"
+      "text-x-markdown",
+      "text-x-readme"
     ],
     "application-vnd.oasis.opendocument.text": [
       "application-vnd.oasis.opendocument.text-template"
     ],
     "application-vnd.oasis.opendocument.spreadsheet": [
-      "application-vnd.oasis.opendocument.spreadsheet-template"
+      "application-vnd.oasis.opendocument.spreadsheet-template",
+      "text-csv",
+      "text-tab-separated-values",
+      "x-office-spreadsheet"
     ],
     "application-vnd.oasis.opendocument.presentation": [
       "application-vnd.oasis.opendocument.presentation-template"
@@ -279,7 +298,8 @@
       "image-tiff",
       "image-bmp",
       "image-x-icon",
-      "image-avif"
+      "image-avif",
+      "image-vnd.microsoft.icon"
     ],
     "image-raw": [
       "image-x-dcraw",
@@ -377,7 +397,8 @@
       "application-x-firmware"
     ],
     "text-html": [
-      "application-xhtml+xml"
+      "application-xhtml+xml",
+      "text-x-qml"
     ],
     "text-css": [
       "text-x-scss",
@@ -411,12 +432,15 @@
     ],
     "text-x-shellscript": [
       "application-x-shellscript",
-      "text-x-script"
+      "text-x-script",
+      "text-x-makefile"
     ],
     "text-x-config": [
       "application-x-desktop",
       "text-x-ini",
-      "application-x-wine-extension-ini"
+      "application-x-wine-extension-ini",
+      "application-x-theme",
+      "text-x-cmake"
     ],
     "application-json": [
       "application-ld+json"
@@ -480,7 +504,10 @@
       "text-richtext",
       "application-rtf",
       "application-x-empty",
-      "text-x-log"
+      "application-x-zerosize",
+      "text-x-log",
+      "text-x-patch",
+      "text-x-diff"
     ],
     "application-msword": [
       "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -496,13 +523,17 @@
       "application-x-pdf"
     ],
     "text-markdown": [
-      "text-x-markdown"
+      "text-x-markdown",
+      "text-x-readme"
     ],
     "application-vnd.oasis.opendocument.text": [
       "application-vnd.oasis.opendocument.text-template"
     ],
     "application-vnd.oasis.opendocument.spreadsheet": [
-      "application-vnd.oasis.opendocument.spreadsheet-template"
+      "application-vnd.oasis.opendocument.spreadsheet-template",
+      "text-csv",
+      "text-tab-separated-values",
+      "x-office-spreadsheet"
     ],
     "application-vnd.oasis.opendocument.presentation": [
       "application-vnd.oasis.opendocument.presentation-template"
@@ -516,7 +547,8 @@
       "image-tiff",
       "image-bmp",
       "image-x-icon",
-      "image-avif"
+      "image-avif",
+      "image-vnd.microsoft.icon"
     ],
     "image-raw": [
       "image-x-dcraw",
@@ -614,7 +646,8 @@
       "application-x-firmware"
     ],
     "text-html": [
-      "application-xhtml+xml"
+      "application-xhtml+xml",
+      "text-x-qml"
     ],
     "text-css": [
       "text-x-scss",
@@ -648,12 +681,15 @@
     ],
     "text-x-shellscript": [
       "application-x-shellscript",
-      "text-x-script"
+      "text-x-script",
+      "text-x-makefile"
     ],
     "text-x-config": [
       "application-x-desktop",
       "text-x-ini",
-      "application-x-wine-extension-ini"
+      "application-x-wine-extension-ini",
+      "application-x-theme",
+      "text-x-cmake"
     ],
     "application-json": [
       "application-ld+json"

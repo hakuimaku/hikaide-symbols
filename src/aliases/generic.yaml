@@ -302,53 +302,5 @@
       "media-flash-smart-media-symbolic",
       "media-memory-symbolic"
     ]
-  },
-  "scalable/devices": {
-    "drive-harddisk": [
-      "drive",
-      "drive-harddisk-solidstate",
-      "drive-harddisk-root",
-      "drive-partition"
-    ],
-    "drive-removable-media": [
-      "drive-removable-media-usb",
-      "drive-removable-media-usb-pendrive",
-      "drive-removable",
-      "drive-harddisk-usb",
-      "usbpendrive",
-      "media-removable-usb",
-      "media-usb"
-    ],
-    "media-flash": [
-      "media-flash-sd",
-      "media-flash-sd-mmc",
-      "media-flash-memory-stick",
-      "media-flash-smart-media",
-      "media-memory"
-    ]
-  },
-  "symbolic/devices": {
-    "drive-harddisk-symbolic": [
-      "drive-symbolic",
-      "drive-harddisk-solidstate-symbolic",
-      "drive-harddisk-root-symbolic",
-      "drive-partition-symbolic"
-    ],
-    "drive-removable-media-symbolic": [
-      "drive-removable-media-usb-symbolic",
-      "drive-removable-media-usb-pendrive-symbolic",
-      "drive-removable-symbolic",
-      "drive-harddisk-usb-symbolic",
-      "usbpendrive-symbolic",
-      "media-removable-usb-symbolic",
-      "media-usb-symbolic"
-    ],
-    "media-flash-symbolic": [
-      "media-flash-sd-symbolic",
-      "media-flash-sd-mmc-symbolic",
-      "media-flash-memory-stick-symbolic",
-      "media-flash-smart-media-symbolic",
-      "media-memory-symbolic"
-    ]
   }
 }

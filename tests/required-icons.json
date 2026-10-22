@@ -109,6 +109,7 @@
     "text-x-kotlin",
     "text-x-swift",
     "text-x-typescript",
+    "text-x-lua",
     "application-x-executable",
     "application-x-sharedlib",
     "application-x-object",
