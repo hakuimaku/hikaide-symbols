@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>application-x-sqlite3</title>
 
-<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="#e1e3e9"/><path d="M41 4v11h11" fill="#999da8"/><g transform="translate(18 24) scale(1.16)"><path d="M2.5 5.5 a9.5 3 0 1 0 19 0 a9.5 3 0 1 0-19 0Z M2.5 8 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 12.5 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 17 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z" fill="#30333c"/></g>
+<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="@PAPER_SMALL@"/><path d="M41 4v11h11" fill="@PAPER_SMALL_FOLD@"/><g transform="translate(18 24) scale(1.16)"><path d="M2.5 5.5 a9.5 3 0 1 0 19 0 a9.5 3 0 1 0-19 0Z M2.5 8 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 12.5 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z M2.5 17 a9.5 3 0 0 0 19 0 v3.5 a9.5 3 0 0 1-19 0Z" fill="@FILE_GLYPH@"/></g>
 </svg>

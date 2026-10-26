@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>view-sort-ascending</title>
 
-<g transform="translate(10 10) scale(1.83)"><path d="M2 19h12M2 12h8M2 5h4m11 2 3-4 3 4m-3-4v18" fill="none" stroke="#8d99a9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(10 10) scale(1.83)"><path d="M2 19h12M2 12h8M2 5h4m11 2 3-4 3 4m-3-4v18" fill="none" stroke="@ACTION_GLYPH@" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>

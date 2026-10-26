@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>audio-volume-high</title>
 <style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/><g transform="translate(8 8) scale(3)"><g color="#d3dbe6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h3l4-4v12l-4-4H1Z" fill="currentColor" stroke="none"/><path d="M10 6q2 2 0 4"/><path d="M12 4q4 4 0 8"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
+<rect x="5" y="5" width="54" height="54" rx="14" fill="@STATUS_SURFACE@"/><g transform="translate(8 8) scale(3)"><g color="@STATUS_GLYPH@" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h3l4-4v12l-4-4H1Z" fill="currentColor" stroke="none"/><path d="M10 6q2 2 0 4"/><path d="M12 4q4 4 0 8"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
 </svg>

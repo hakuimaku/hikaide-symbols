@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>network-wireless-signal-excellent</title>
 <style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/><g transform="translate(8 8) scale(3)"><g color="#d3dbe6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M5 10q3-3 6 0"/><path d="M3 7q5-5 10 0"/><path d="M1 4q7-6 14 0"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
+<rect x="5" y="5" width="54" height="54" rx="14" fill="@STATUS_SURFACE@"/><g transform="translate(8 8) scale(3)"><g color="@STATUS_GLYPH@" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M5 10q3-3 6 0"/><path d="M3 7q5-5 10 0"/><path d="M1 4q7-6 14 0"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
 </svg>

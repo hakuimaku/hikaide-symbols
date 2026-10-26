@@ -3,19 +3,21 @@
 import gzip
 import hashlib
 import tarfile
-from theme import ROOT, THEME, NAME
+from theme import ROOT, THEME, NAME, VARIANTS
 from validate import validate
 
 
-def package():
-    validate()
-    output = ROOT / "dist" / (NAME + ".tar.gz")
+def package(theme=THEME):
+    """Archive one validated appearance with reproducible timestamps and aliases."""
+    validate(theme)
+    name = theme.name
+    output = ROOT / "dist" / (name + ".tar.gz")
     with output.open("wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", filename="", mtime=0) as compressed:
         with tarfile.open(fileobj=compressed, mode="w", format=tarfile.PAX_FORMAT) as archive:
-            for path in [THEME, *sorted(THEME.rglob("*"))]:
+            for path in [theme, *sorted(theme.rglob("*"))]:
                 if path.name == "icon-theme.cache":
                     continue
-                info = archive.gettarinfo(str(path), arcname=str(path.relative_to(THEME.parent)))
+                info = archive.gettarinfo(str(path), arcname=str(path.relative_to(theme.parent)))
                 info.uid = info.gid = info.mtime = 0
                 info.uname = info.gname = ""
                 if info.isfile():
@@ -29,4 +31,5 @@ def package():
 
 
 if __name__ == "__main__":
-    package()
+    for name in VARIANTS.values():
+        package(THEME.parent / name)

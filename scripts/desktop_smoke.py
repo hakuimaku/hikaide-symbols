@@ -9,10 +9,13 @@ import sys
 import tempfile
 import time
 from pathlib import Path
-from theme import ROOT, THEME, NAME
+from theme import ROOT, THEME, VARIANTS
 
 
-def smoke(binary, gtk):
+def smoke(binary, gtk, mode="dark"):
+    """Start one application with a private icon-theme selection."""
+    theme_name = VARIANTS[mode]
+    theme = THEME.parent / theme_name
     server = "broadwayd" if gtk == 3 else "gtk4-broadwayd"
     if not shutil.which(binary) or not shutil.which(server):
         return {"application": binary, "status": "not installed"}
@@ -22,11 +25,11 @@ def smoke(binary, gtk):
             (base / name).mkdir(mode=0o700)
         icons = base / "data/icons"
         icons.mkdir()
-        (icons / NAME).symlink_to(THEME, target_is_directory=True)
+        (icons / theme_name).symlink_to(theme, target_is_directory=True)
         for version in (3, 4):
             folder = base / f"config/gtk-{version}.0"
             folder.mkdir()
-            (folder / "settings.ini").write_text(f"[Settings]\ngtk-icon-theme-name={NAME}\n")
+            (folder / "settings.ini").write_text(f"[Settings]\ngtk-icon-theme-name={theme_name}\n")
         env = {**os.environ, "XDG_CONFIG_HOME": str(base / "config"), "XDG_DATA_HOME": str(base / "data"),
                "XDG_CACHE_HOME": str(base / "cache"), "XDG_STATE_HOME": str(base / "state"), "XDG_RUNTIME_DIR": str(base / "run"),
                "GDK_BACKEND": "broadway", "BROADWAY_DISPLAY": ":9", "GSK_RENDERER": "cairo", "GSETTINGS_BACKEND": "keyfile",
@@ -47,7 +50,7 @@ def smoke(binary, gtk):
                 query = "gtk-query-settings" if gtk == 3 else "gtk4-query-settings"
                 settings = subprocess.run([query], env=env, capture_output=True, text=True, timeout=5)
                 selected = next((s.strip() for s in settings.stdout.splitlines() if "gtk-icon-theme-name:" in s), "")
-                assert NAME in selected, (binary, selected, settings.stderr)
+                assert selected == f'gtk-icon-theme-name: "{theme_name}"', (binary, selected, settings.stderr)
                 command = ["dbus-run-session", "--", binary]
                 command += ["--new-window", str(ROOT / "docs")] if binary == "nautilus" else [str(ROOT / "docs")]
                 with (base / "app.log").open("w+") as app_log:
@@ -78,7 +81,8 @@ def smoke(binary, gtk):
 
 
 if __name__ == "__main__":
-    results = [smoke("nautilus", 4), smoke("thunar", 3)]
+    results = [{"variant": mode, **smoke(binary, gtk, mode)}
+               for mode in VARIANTS for binary, gtk in (("nautilus", 4), ("thunar", 3))]
     target = ROOT / "reports/desktop-smoke.json"
     target.write_text(json.dumps(results, indent=2) + "\n")
     print(target.read_text())

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>microphone-sensitivity-high</title>
 <style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/><g transform="translate(8 8) scale(3)"><g transform="translate(1 1) scale(.5833333)" color="#d3dbe6"><path d="M9 4a3 3 0 0 1 6 0v8a3 3 0 0 1-6 0Zm-4 6v2a7 7 0 0 0 14 0v-2M12 19v4m-4 0h8" fill="none" stroke="currentColor" stroke-width="2.57" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
+<rect x="5" y="5" width="54" height="54" rx="14" fill="@STATUS_SURFACE@"/><g transform="translate(8 8) scale(3)"><g transform="translate(1 1) scale(.5833333)" color="@STATUS_GLYPH@"><path d="M9 4a3 3 0 0 1 6 0v8a3 3 0 0 1-6 0Zm-4 6v2a7 7 0 0 0 14 0v-2M12 19v4m-4 0h8" fill="none" stroke="currentColor" stroke-width="2.57" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>
 </svg>

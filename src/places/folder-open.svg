@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>folder-open</title>
 
-<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="#414345"/>
-<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="#303233"/>
-<path d="M5 23q0-3 3-3h48q3 0 3 3v27H5Z" fill="#202223"/><path d="M1 36q0-4 4-4l50-6q8-1 8 6v21q0 7-7 7H8q-7 0-7-7Z" fill="#383b3d"/><path d="M63 46 49 60h7q7 0 7-7Z" fill="#17191a"/>
+<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="@FOLDER_BACK@"/>
+<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="@FOLDER_FRONT@"/>
+<path d="M5 23q0-3 3-3h48q3 0 3 3v27H5Z" fill="@FOLDER_OPEN_INTERIOR@"/><path d="M1 36q0-4 4-4l50-6q8-1 8 6v21q0 7-7 7H8q-7 0-7-7Z" fill="@FOLDER_OPEN_FRONT@"/><path d="M63 46 49 60h7q7 0 7-7Z" fill="@FOLDER_CORNER@"/>
 
 </svg>

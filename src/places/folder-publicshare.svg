@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>folder-publicshare</title>
 <style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="#414345"/>
-<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="#303233"/>
-<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor"><path d="M15 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM8 22v-3a7 7 0 0 1 14 0v3ZM5 6a3 3 0 1 1 0 6m1 3q-5 0-5 7h4" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M63 46 49 60h7q7 0 7-7Z" fill="#17191a"/>
+<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="@FOLDER_BACK@"/>
+<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="@FOLDER_FRONT@"/>
+<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor"><path d="M15 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM8 22v-3a7 7 0 0 1 14 0v3ZM5 6a3 3 0 1 1 0 6m1 3q-5 0-5 7h4" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M63 46 49 60h7q7 0 7-7Z" fill="@FOLDER_CORNER@"/>
 
 </svg>

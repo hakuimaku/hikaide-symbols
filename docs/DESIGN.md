@@ -5,28 +5,25 @@ uses original SVG interpretations rather than cropped bitmap tiles.
 
 | Family | Geometry and treatment |
 | --- | --- |
-| Places | 64×64, large flat graphite folder, solid dark lower-right triangle; ordinary folders have no dot or inner glyph, special folders use an accent glyph; link/hidden names reuse the plain folder, drag acceptance uses an open folder; no gradients or shadows |
-| Files | 64×64, common off-white folded page, charcoal format glyph, no colored file-format badges |
+| Places | 64×64, large flat folder, graphite in dark mode and white-gray in light mode, shaded lower-right triangle; ordinary folders have no dot or inner glyph, special folders use an accent glyph; link/hidden names reuse the plain folder, drag acceptance uses an open folder; no gradients or shadows |
+| Files | 64×64, folded page, off-white in dark mode and a darker cool gray in light mode, charcoal format glyph, no colored file-format badges |
 | Apps | 64×64, recognizable silhouette, gradients and controlled highlights, consistent optical bounds |
 | Devices | Rounded silver/graphite geometry, shared glyph weights, accent indicator |
 | Status | Neutral surface and clear state geometry; fixed warning/error colors |
 | Actions/symbolic | Functional silhouettes; symbolic uses filled outlines at a 16×16 viewBox |
 
-Fixed palette (artwork colors, not independently editable accents):
+Semantic palettes in `src/theme/palette.json` resolve neutral SVG paint tokens for both appearances. The dark variant uses graphite folders and lighter action glyphs. The light variant uses white-gray folders (`#E1E3E7` fronts), darker cool-gray paper (`#D8DBE1` shading to `#B7BBC3`), and slate device/action glyphs. Folder backs and corners remain visibly shaded; the default blue accent has at least 4.5:1 contrast against the closed and open fronts. Shared primitives and geometry are unchanged.
 
-| Role | Colors |
+| Paint | Contract |
 | --- | --- |
-| Folder back | Flat `#414345` |
-| Folder front | Flat `#303233`; open front `#383b3d` |
-| Folder lower-right triangle | Flat `#17191a` |
-| Special-folder glyph | Consumes the single mutable accent through `currentColor`; plain folders have no glyph |
-| Open folder interior | Flat `#202223`, with a sloped front flap |
-| Paper | `#f0f0f3` → `#bfc1ca` |
-| Fold | `#8b8e99` → `#b3b6bf` |
-| File glyph | `#30333c` |
-| Status surface | `#252c36` |
-| Warning / error | `#e5b75f` / `#e27379` |
-| Mutable accent | Only `src/theme/accent.json` |
+| Folder | `folderBack`, `folderFront`, `folderCorner`, `folderOpenInterior`, `folderOpenFront` |
+| Paper | `paper`, `paperShade`, `paperSmall`, fold roles, `fileGlyph` |
+| Symbols | `statusSurface`, `statusGlyph`, `actionGlyph`, device and emblem roles |
+| Warning / error | Stable yellow/red identity; light luminance adjusted for visibility |
+| Accent | `accent.dark` and `accent.light`; one mutable Highlight role per built theme |
+| Intentional colors | Category plates and archive artwork retain their designed colors |
+
+Symbolic artwork is byte-identical across appearances and keeps GTK foreground/semantic/GPA runtime recoloring. It does not consume the neutral mode palette.
 
 Art normally stays within x=4–60, y=3–61 at 64 px. Folder bounds are x=1–63,
 y=5–60, filling almost the entire icon frame. Glyph stroke width is around 2.3 units on its 24-unit master, increased

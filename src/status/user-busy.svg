@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>user-busy</title>
 
-<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/><g transform="translate(8 8) scale(3)"><g transform="translate(1 1) scale(.5833333)" color="#e27379"><path d="M3 12h18" fill="none" stroke="currentColor" stroke-width="2.57" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+<rect x="5" y="5" width="54" height="54" rx="14" fill="@STATUS_SURFACE@"/><g transform="translate(8 8) scale(3)"><g transform="translate(1 1) scale(.5833333)" color="@ERROR@"><path d="M3 12h18" fill="none" stroke="currentColor" stroke-width="2.57" stroke-linecap="round" stroke-linejoin="round"/></g></g>
 </svg>

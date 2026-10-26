@@ -1,2 +1,2 @@
-<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="#414345"/>
-<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="#303233"/>
+<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="@FOLDER_BACK@"/>
+<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="@FOLDER_FRONT@"/>

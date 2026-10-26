@@ -6,7 +6,7 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
-from theme import NAME
+from theme import NAME, VARIANTS
 
 # libadwaita's standalone accent RGB colors; desktop names select the same ACCENT role.
 GNOME = dict(zip("blue teal green yellow orange red pink purple slate".split(),
@@ -49,14 +49,15 @@ def detect(color=None):
     raise ValueError("No desktop accent available; pass --color '#RRGGBB' (required on standalone WMs)")
 
 
-def sync(color, icons_dir=None):
+def sync(color, icons_dir=None, mode="dark"):
+    """Recolor one explicit appearance; callers reconcile accent pairs externally."""
     command = shutil.which("icon-accent")
     if not command:
         raise ValueError("Install https://github.com/hakuimaku/icon-accent and add icon-accent to PATH")
     args = [command]
     if icons_dir is not None:
         args += ["--icons-dir", str(Path(icons_dir).expanduser())]
-    subprocess.run(args + ["set", normalize(color), "--theme", NAME], check=True)
+    subprocess.run(args + ["set", normalize(color), "--theme", VARIANTS[mode]], check=True)
 
 
 def main(action):
@@ -64,12 +65,13 @@ def main(action):
     parser.add_argument("--color")
     if action == "sync":
         parser.add_argument("--icons-dir", type=Path)
+        parser.add_argument("--variant", choices=VARIANTS, default="dark")
     args = parser.parse_args()
     try:
         color = detect(args.color)
         if action == "detect":
             print(color)
         else:
-            sync(color, args.icons_dir)
+            sync(color, args.icons_dir, args.variant)
     except (ValueError, OSError, subprocess.SubprocessError) as e:
         parser.exit(1, f"{e}\n")

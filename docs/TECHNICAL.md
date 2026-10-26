@@ -12,9 +12,9 @@ python3 scripts/validate.py
 ./scripts/install.sh
 ```
 
-The build is written to `dist/Hikaide-Symbols/`. The installer copies it to `~/.icons/Hikaide-Symbols` and refreshes the icon cache when a GTK cache tool is available. No root access is needed.
+One build validates and writes `dist/Hikaide-Symbols/` and `dist/Hikaide-Symbols-Light/`. The installer stages both trees under `~/.icons` and refreshes the icon cache when a GTK cache tool is available. No root access is needed.
 
-Select **Hikaide-Symbols** in GNOME Tweaks, Xfce Appearance, or your desktop's icon theme selector. On GNOME, you can also run:
+Select **Hikaide-Symbols** (dark) or **Hikaide-Symbols-Light** (light) in GNOME Tweaks, Xfce Appearance, or your desktop's icon theme selector. On GNOME, you can also run:
 
 ```sh
 gsettings set org.gnome.desktop.interface icon-theme 'Hikaide-Symbols'
@@ -35,7 +35,7 @@ python3 scripts/build.py
 ./scripts/install.sh --replace
 ```
 
-`--replace` replaces the installed theme with the current build, including its accent and artwork. Preserve any installed customizations first. Use the same directory option you used during installation.
+`--replace` replaces both installed themes with the current build, including its accent and artwork. Preserve any installed customizations first. Use the same directory option you used during installation.
 
 To uninstall, first select another icon theme, then run:
 
@@ -47,12 +47,12 @@ To uninstall, first select another icon theme, then run:
 
 ## Accent color
 
-The theme has one editable accent. Special-folder glyphs share that color; application palettes and semantic warning/error colors remain fixed.
+Each appearance has one editable accent. Special-folder glyphs share that color; intentional category colors remain fixed, while warning/error colors retain their hues with readable light-mode luminance.
 
-For a build-time accent, edit `src/theme/accent.json`, then rebuild and install:
+For a build-time accent, edit the `accent` object in `src/theme/palette.json` to the values below, leaving both neutral palettes intact, then rebuild and install:
 
 ```json
-{"accent": "#5294E2"}
+{"dark": "#5294E2", "light": "#2E65A3"}
 ```
 
 To recolor an installed theme, install [icon-accent](https://github.com/hakuimaku/icon-accent) and make it available on `PATH`:
@@ -76,6 +76,8 @@ Detection reads supported GNOME or KDE desktop accent settings. On a standalone 
 ./scripts/sync-accent --color '#AC7994'
 ```
 
+The mutation adapters accept `--variant light` to select `Hikaide-Symbols-Light`; the default remains dark for compatibility. They update one explicit theme per invocation. HakuSpace owns accent-pair reconciliation and must update both themes when an accent changes, with rollback, before selecting a mode. Mode switches should only change the selected theme name.
+
 The adapters also accept `--icons-dir` when changing an installation outside the default lookup path. Synchronization runs when invoked; no background service is installed.
 
 Symbolic icons use GTK foreground and semantic colors. Four symbolic icons also declare a runtime accent role for GTK versions that support it; older GTK renders their filled shapes with the foreground color. See the [design contract](DESIGN.md) for details.
@@ -94,7 +96,7 @@ Symbolic icons use GTK foreground and semantic colors. Four symbolic icons also 
 
 Application icons fall back to `Adwaita,breeze,hicolor` cleanly, with standalone system utilities lacking upstream icons (such as `hwloc`) provided directly.
 
-There are also 159 canonical symbolic icons and optimized 16/24 px variants for folders and file types. The generated theme contains 532 SVG files and 757 relative symlink aliases: 1,289 SVG paths in total. These counts include size variants and aliases, rather than 1,289 distinct designs.
+There are also 159 canonical symbolic icons and optimized 16/24 px variants for folders and file types. Each generated theme contains 532 SVG files and 757 relative symlink aliases: 1,289 SVG paths in total. These counts include size variants and aliases, rather than 1,289 distinct designs.
 
 Coverage varies by installed applications. Run the local launcher scan after building:
 
@@ -106,7 +108,7 @@ Missing names appear in `reports/uncovered-app-icons.txt`. Machine-specific repo
 
 ## Editing and validation
 
-Editable SVGs live under `src/`, grouped by icon family. Shared geometry lives in `src/primitives/`, alias manifests in `src/aliases/`, and the accent setting in `src/theme/accent.json`. A normal build uses these sources directly.
+Editable SVGs live under `src/`, grouped by icon family. Shared geometry lives in `src/primitives/`, alias manifests in `src/aliases/`, and semantic palettes and accents in `src/theme/palette.json`. Regular SVG paint tokens such as `@FOLDER_FRONT@` are resolved during builds; preview the built SVGs rather than unresolved source tokens. Symbolic source paints remain runtime-semantic.
 
 To regenerate the original artwork from its Python drawing definitions, use `python3 scripts/generate_sources.py`. This requires PySide6 with QtSvg and **overwrites generated SVG sources and alias manifests**, including manual edits to those files.
 
@@ -124,6 +126,9 @@ To regenerate the family preview sheets, install `rsvg-convert`, Pillow, and Fon
 
 ```sh
 python3 scripts/render_png.py
+python3 scripts/render_png.py --appearances
+python3 scripts/runtime_test.py --isolated
+python3 scripts/desktop_smoke.py
 ```
 
 To create a deterministic release archive and SHA-256 checksum:
@@ -132,4 +137,10 @@ To create a deterministic release archive and SHA-256 checksum:
 python3 scripts/package.py
 ```
 
-The files are written to `dist/Hikaide-Symbols.tar.gz` and `dist/Hikaide-Symbols.tar.gz.sha256`. The archive preserves relative icon aliases and includes the project license and artwork provenance.
+An archive and SHA-256 sidecar are written for each theme: `dist/Hikaide-Symbols.tar.gz` and `dist/Hikaide-Symbols-Light.tar.gz`. The archive preserves relative icon aliases and includes the project license and artwork provenance.
+
+## Managed appearance metadata
+
+New builds carry `.hikaide-symbols.json` with exactly `family: "Hikaide-Symbols"`, `version: 2`, and `variant: "dark"|"light"`. The installer recognizes the exact v1 `.hikaide-symbols` marker only for dark-theme migration. It refuses unmanaged or symlinked targets before modifying either sibling. Cache generation and validation finish for both staged trees before replacement. Update, uninstall and build rename failures restore the previous pair; backups remain available if restoration itself fails.
+
+The paired outputs are asset contracts for HakuSpace. This repository does not select GTK themes, write GNOME color-scheme preferences, extract wallpaper colors, or alter saved Hikai mode preferences.

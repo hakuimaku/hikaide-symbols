@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>folder-recent</title>
 <style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="#414345"/>
-<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="#303233"/>
-<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor"><path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0ZM12 5v7l4 3" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M63 46 49 60h7q7 0 7-7Z" fill="#17191a"/>
+<path d="M1 25V11q0-6 6-6h15q3 0 5 3l4 5h26q6 0 6 6v34H1Z" fill="@FOLDER_BACK@"/>
+<path d="M1 25q0-7 7-7h48q7 0 7 7v28q0 7-7 7H8q-7 0-7-7Z" fill="@FOLDER_FRONT@"/>
+<g transform="translate(19 28) scale(1.1)" class="ColorScheme-Highlight" stroke="currentColor"><path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0ZM12 5v7l4 3" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M63 46 49 60h7q7 0 7-7Z" fill="@FOLDER_CORNER@"/>
 
 </svg>

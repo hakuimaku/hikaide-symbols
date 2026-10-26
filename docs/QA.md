@@ -1,3 +1,31 @@
+# Dark/light asset verification — 2026-10-26
+
+Both `Hikaide-Symbols` and `Hikaide-Symbols-Light` build from shared geometry and `src/theme/palette.json`. Each output contains 1,289 SVG names and 757 relative aliases, with identical lookup coverage and symbolic bytes. New managed metadata is `.hikaide-symbols.json`, version 2, with a dark/light variant. Existing dark v1 installations migrate via `--replace`.
+
+The light palette uses white-gray folder fronts (`#E1E3E7`) with shaded backs and corners, darker cool-gray paper (`#D8DBE1` to `#B7BBC3`), and slate system glyphs. Pixel comparisons confirm folders are brighter and file paper is darker than the previous light palette. The complete dark output retains identical checksums; alias topology and symbolic bytes remain unchanged.
+
+Validated commands:
+
+```sh
+python3 scripts/build.py
+python3 scripts/validate.py
+python3 -m unittest discover -s tests -v
+python3 scripts/runtime_test.py --isolated
+python3 scripts/desktop_smoke.py
+python3 scripts/render_png.py --appearances
+python3 scripts/package.py
+```
+
+- Deterministic builds and archives cover both trees; unresolved tokens, invalid SVGs and escaping aliases are rejected.
+- Unit checks cover clean install, v1 migration, update, uninstall, unmanaged siblings, staging/cache failure, second-commit failure, uninstall failure and recoverable backups after rollback failure.
+- GTK3 3.24.52 and GTK4 4.24.1 each resolve 2,525 required lookups per appearance, including HiDPI and hicolor fallback. Foreground recoloring passes in both; GTK4 GPA accent A/B recoloring passes for both appearances.
+- Nautilus and Thunar stay alive for four seconds per appearance on private Broadway/D-Bus sessions; query output matches the exact expected icon-theme name. These are startup checks, not interactive desktop acceptance. Isolated portal/thumbnailer warnings remain in the local diagnostic report.
+- [Dark on dark](../previews/preview-dark-on-dark.png) and [light on light](../previews/preview-light-on-light.png) were visually inspected. [Dark on light](../previews/preview-dark-on-light-sanity.png) and [light on dark](../previews/preview-light-on-dark-sanity.png) are diagnostic cross-background sheets. Light warning/error luminance is deepened to preserve legibility without changing semantic hues.
+
+The optional external `icon-accent` round-trip test is skipped because that CLI is unavailable. Physical pointer use, compositor behavior and HakuSpace mode/accent-pair integration remain outside this asset-only verification. Tests use disposable settings and installations; the user's selected theme is unchanged.
+
+---
+
 # Hikaide-Symbols — QA, 2026-10-16
 
 The implementation covers all eight icon families. Build, validation and native GTK

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>document-properties</title>
 
-<g transform="translate(10 10) scale(1.83)"><path d="M4 2h9l5 5v15H4Zm9 0v5h5M8 12h8m-4-2v4M8 17h8m-6-2v4" fill="none" stroke="#8d99a9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(10 10) scale(1.83)"><path d="M4 2h9l5 5v15H4Zm9 0v5h5M8 12h8m-4-2v4M8 17h8m-6-2v4" fill="none" stroke="@ACTION_GLYPH@" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>

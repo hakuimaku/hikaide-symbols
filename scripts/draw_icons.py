@@ -153,19 +153,19 @@ def trash_body(name, width=2.3):
 
     parts = []
     if is_full:
-        parts.append('<path d="m22 16-4-8 9-3 5 11" fill="#f0f0f3"/>')
-        parts.append('<path d="m33 16 6-9 9 4-5 9" fill="#e1e3e9"/>')
-        parts.append('<path d="m25 13 9-5 7 5" fill="#bfc1ca"/>')
+        parts.append('<path d="m22 16-4-8 9-3 5 11" fill="@PAPER@"/>')
+        parts.append('<path d="m33 16 6-9 9 4-5 9" fill="@PAPER_SMALL@"/>')
+        parts.append('<path d="m25 13 9-5 7 5" fill="@PAPER_SHADE@"/>')
         parts.append('<g transform="rotate(-12 12 14)">')
-        parts.append(f'<path d="M24 10V6q0-2 2-2h12q2 0 2 2v4" fill="none" stroke="#414345" stroke-width="{handle_w}" stroke-linecap="round" stroke-linejoin="round"/>')
-        parts.append('<rect x="10" y="11" width="44" height="6" rx="2.5" fill="#414345"/>')
+        parts.append(f'<path d="M24 10V6q0-2 2-2h12q2 0 2 2v4" fill="none" stroke="@FOLDER_BACK@" stroke-width="{handle_w}" stroke-linecap="round" stroke-linejoin="round"/>')
+        parts.append('<rect x="10" y="11" width="44" height="6" rx="2.5" fill="@FOLDER_BACK@"/>')
         parts.append('</g>')
     else:
-        parts.append(f'<path d="M24 10V6q0-2 2-2h12q2 0 2 2v4" fill="none" stroke="#414345" stroke-width="{handle_w}" stroke-linecap="round" stroke-linejoin="round"/>')
-        parts.append('<rect x="10" y="11" width="44" height="6" rx="2.5" fill="#414345"/>')
+        parts.append(f'<path d="M24 10V6q0-2 2-2h12q2 0 2 2v4" fill="none" stroke="@FOLDER_BACK@" stroke-width="{handle_w}" stroke-linecap="round" stroke-linejoin="round"/>')
+        parts.append('<rect x="10" y="11" width="44" height="6" rx="2.5" fill="@FOLDER_BACK@"/>')
 
-    parts.append('<path d="M14 16h36l-3.5 38q-.5 4-4.5 4H22q-4 0-4.5-4Z" fill="#303233"/>')
-    parts.append('<path d="M18 54l-.5 4q-.5 4 4.5 4h20q4 0 4.5-4l-.5-4Z" fill="#17191a"/>')
+    parts.append('<path d="M14 16h36l-3.5 38q-.5 4-4.5 4H22q-4 0-4.5-4Z" fill="@FOLDER_FRONT@"/>')
+    parts.append('<path d="M18 54l-.5 4q-.5 4 4.5 4h20q4 0 4.5-4l-.5-4Z" fill="@FOLDER_CORNER@"/>')
     parts.append(f'<g class="ColorScheme-Highlight" stroke="currentColor"><path d="M26 24v22M32 24v22M38 24v22" fill="none" stroke="currentColor" stroke-width="{stroke_w}" stroke-linecap="round"/></g>')
     return "".join(parts)
 
@@ -190,8 +190,8 @@ def places():
                 continue
             body = shell
             if name == "folder-open":
-                body += '<path d="M5 23q0-3 3-3h48q3 0 3 3v27H5Z" fill="#202223"/>'
-                body += '<path d="M1 36q0-4 4-4l50-6q8-1 8 6v21q0 7-7 7H8q-7 0-7-7Z" fill="#383b3d"/>'
+                body += '<path d="M5 23q0-3 3-3h48q3 0 3 3v27H5Z" fill="@FOLDER_OPEN_INTERIOR@"/>'
+                body += '<path d="M1 36q0-4 4-4l50-6q8-1 8 6v21q0 7-7 7H8q-7 0-7-7Z" fill="@FOLDER_OPEN_FRONT@"/>'
             if name == "user-trash-full":
                 body += '<path d="m28 30-3-6 6-2 4 8m0 0 4-5 6 3-2 4" fill="none" class="ColorScheme-Highlight" stroke="currentColor" stroke-width="2.6"/>'
             decorated = name not in {"folder", "folder-open"}
@@ -255,7 +255,7 @@ LETTERS = {
 }
 
 
-def lettering(text, color="#30333c", box=24):
+def lettering(text, color="@FILE_GLYPH@", box=24):
     scale = min(1.7, box / (len(text) * 9))
     width = (len(text) * 9 - 3) * scale
     return f'<g transform="translate({(24-width)/2:g} {12-5*scale:g}) scale({scale:g})">' + ''.join(
@@ -322,15 +322,15 @@ def mimetypes():
                 write(f"{size}x{size}/mimetypes", name, box_body)
         else:
             if symbol == "checker":
-                g = ''.join(f'<rect x="{2+x*4}" y="{2+y*4}" width="4" height="4" fill="#30333c"/>' for x in range(5) for y in range(5) if (x+y)%2 == 0)
+                g = ''.join(f'<rect x="{2+x*4}" y="{2+y*4}" width="4" height="4" fill="@FILE_GLYPH@"/>' for x in range(5) for y in range(5) if (x+y)%2 == 0)
             elif symbol == "archive-stack":
-                g = f'<path d="{P[symbol]}" fill="#30333c"/>'
+                g = f'<path d="{P[symbol]}" fill="@FILE_GLYPH@"/>'
             else:
-                g = glyph(symbol, "#30333c", 2.5) if symbol in P else lettering(symbol)
+                g = glyph(symbol, "@FILE_GLYPH@", 2.5) if symbol in P else lettering(symbol)
             body = primitive("file") + f'<g transform="translate(20 25)">{g}</g>'
             write("mimetypes", name, body)
             for size in (16, 24):
-                body = '<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="#e1e3e9"/><path d="M41 4v11h11" fill="#999da8"/>'
+                body = '<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="@PAPER_SMALL@"/><path d="M41 4v11h11" fill="@PAPER_SMALL_FOLD@"/>'
                 body += f'<g transform="translate(18 24) scale(1.16)">{g}</g>'
                 write(f"{size}x{size}/mimetypes", name, body)
         if names:
@@ -344,7 +344,7 @@ def system_families():
         "monitor laptop monitor drive drive drive disc drive drive camera video-camera chip headphones headphones speaker keyboard mouse touchpad gamepad phone tablet printer scanner battery ethernet wifi bluetooth".split()))
     for name, symbol in devices.items():
         body = '<rect x="9" y="10" width="46" height="46" rx="12" fill="#000" opacity=".14"/>'
-        body += '<defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="#d6dbe2"/><stop offset="1" stop-color="#808b9b"/></linearGradient></defs>'
+        body += '<defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="@DEVICE_HIGHLIGHT@"/><stop offset="1" stop-color="@DEVICE_SHADE@"/></linearGradient></defs>'
         body += f'<g transform="translate(11 10) scale(1.75)">{glyph(symbol, "url(#metal)", 2.4)}</g>'
         body += '<circle cx="50" cy="49" r="3" class="ColorScheme-Highlight" fill="currentColor"/>'
         # Identical names across contexts must resolve identically.
@@ -385,9 +385,9 @@ def system_families():
               "fit": "M3 9V3h6m6 0h6v6m0 6v6h-6m-6 0H3v-6"})
     for name, symbol in actions.items():
         if symbol == "home":
-            write("actions", name, f'<g transform="translate(10 10) scale(1.83)"><path d="{P[symbol]}" fill="#8d99a9"/></g>')
+            write("actions", name, f'<g transform="translate(10 10) scale(1.83)"><path d="{P[symbol]}" fill="@ACTION_GLYPH@"/></g>')
         else:
-            write("actions", name, f'<g transform="translate(10 10) scale(1.83)">{glyph(symbol, "#8d99a9", 2.4)}</g>')
+            write("actions", name, f'<g transform="translate(10 10) scale(1.83)">{glyph(symbol, "@ACTION_GLYPH@", 2.4)}</g>')
         symbolic("actions", name, symbol)
     categories = dict(zip(
         "applications-accessories applications-development applications-games applications-graphics applications-internet applications-multimedia applications-office applications-system applications-utilities preferences-desktop preferences-system".split(),
@@ -402,8 +402,8 @@ def system_families():
         "emblem-default emblem-favorite emblem-important emblem-readonly emblem-shared emblem-synchronizing emblem-symbolic-link emblem-unreadable emblem-downloads emblem-photos".split(),
         "check star warning lock share sync link error download image".split()))
     for name, symbol in emblems.items():
-        body = '<circle cx="32" cy="32" r="26" fill="#202834" stroke="#485363" stroke-width="2"/>'
-        body += f'<g transform="translate(16 16) scale(1.33)">{glyph(symbol, "#e5e9f1", 2.6)}</g>'
+        body = '<circle cx="32" cy="32" r="26" fill="@EMBLEM_SURFACE@" stroke="@EMBLEM_BORDER@" stroke-width="2"/>'
+        body += f'<g transform="translate(16 16) scale(1.33)">{glyph(symbol, "@EMBLEM_GLYPH@", 2.6)}</g>'
         write("emblems", name, body)
         symbolic("emblems", name, symbol)
     manifests = {"scalable/actions": {"view-grid": ["view-app-grid"], "view-list": ["view-list-details"],
@@ -477,7 +477,7 @@ def system_families():
 
 
 def status_geometry(name, symbolic=True):
-    color = "#2e3436" if symbolic else "#d3dbe6"
+    color = "#2e3436" if symbolic else "@STATUS_GLYPH@"
     group = lambda s: f'<g color="{color}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{s}</g>'
     muted = any(k in name for k in ("muted", "offline", "disabled"))
     cross = '<path d="m10 10 4 4m0-4-4 4"/>' if muted else ''
@@ -509,12 +509,12 @@ def status_geometry(name, symbolic=True):
 
 
 def status_body(name):
-    semantic = "#e5b75f" if name in {"battery-caution", "battery-low", "dialog-warning", "user-away"} else "#e27379" if name in {"dialog-error", "battery-empty", "user-busy"} else None
+    semantic = "@WARNING@" if name in {"battery-caution", "battery-low", "dialog-warning", "user-away"} else "@ERROR@" if name in {"dialog-error", "battery-empty", "user-busy"} else None
     geom = status_geometry(name, symbolic=False)
     if semantic:
-        geom = geom.replace("#d3dbe6", semantic)
+        geom = geom.replace("@STATUS_GLYPH@", semantic)
     accent_dot = '' if semantic else '<circle cx="54" cy="52" r="2.5" class="ColorScheme-Highlight" fill="currentColor"/>'
-    return '<rect x="5" y="5" width="54" height="54" rx="14" fill="#252c36"/>' + f'<g transform="translate(8 8) scale(3)">{geom}</g>' + accent_dot
+    return '<rect x="5" y="5" width="54" height="54" rx="14" fill="@STATUS_SURFACE@"/>' + f'<g transform="translate(8 8) scale(3)">{geom}</g>' + accent_dot
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>emblem-shared</title>
 
-<circle cx="32" cy="32" r="26" fill="#202834" stroke="#485363" stroke-width="2"/><g transform="translate(16 16) scale(1.33)"><path d="M5 12 19 4M5 12l14 8M8 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM22 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm0 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" fill="none" stroke="#e5e9f1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<circle cx="32" cy="32" r="26" fill="@EMBLEM_SURFACE@" stroke="@EMBLEM_BORDER@" stroke-width="2"/><g transform="translate(16 16) scale(1.33)"><path d="M5 12 19 4M5 12l14 8M8 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM22 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm0 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" fill="none" stroke="@EMBLEM_GLYPH@" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>

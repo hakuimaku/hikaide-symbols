@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Fail on packaging, SVG, alias and single-accent contract violations."""
 import argparse
+import json
 import configparser
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from theme import ROOT, THEME, NAME, CONTEXTS
+from theme import ROOT, THEME, NAME, CONTEXTS, VARIANTS, marker
 
 
 def validate(theme=THEME, require_report=True):
@@ -13,7 +14,11 @@ def validate(theme=THEME, require_report=True):
     ini = configparser.ConfigParser(interpolation=None)
     ini.read(theme / "index.theme")
     info = ini["Icon Theme"]
-    assert info["Name"] == NAME and info["Comment"]
+    assert info["Name"] in VARIANTS.values() and info["Comment"]
+    mode = next(mode for mode, name in VARIANTS.items() if name == info["Name"])
+    metadata = theme / ".hikaide-symbols.json"
+    assert not metadata.is_symlink() and metadata.is_file(), "Missing managed metadata"
+    assert json.loads(metadata.read_text()) == json.loads(marker(mode)), "Invalid appearance metadata"
     assert info["Inherits"].split(",")[-1] == "hicolor", "hicolor fallback required"
     dirs = info["Directories"].split(",")
     assert len(dirs) == len(set(dirs)), "Duplicate directory"
@@ -92,6 +97,7 @@ def validate(theme=THEME, require_report=True):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("theme", nargs="?", type=Path, default=THEME)
+    parser.add_argument("theme", nargs="?", type=Path, default=None)
     args = parser.parse_args()
-    print(f"Validated {validate(args.theme)} SVG names; index, aliases, XML and accent contract OK")
+    for theme in [args.theme] if args.theme else [THEME.parent / name for name in VARIANTS.values()]:
+        print(f"Validated {theme.name}: {validate(theme)} SVG names; index, aliases, XML and accent contract OK")

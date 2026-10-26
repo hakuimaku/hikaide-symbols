@@ -6,6 +6,7 @@ for the running desktop, change dconf, or touch installed icon themes.
 """
 import argparse
 import atexit
+from contextlib import contextmanager
 import io
 import json
 import os
@@ -14,7 +15,7 @@ import sys
 import tempfile
 import time
 from pathlib import Path
-from theme import ROOT, THEME, NAME
+from theme import ROOT, THEME, NAME, VARIANTS, accent as theme_accent
 
 
 def run_gtk(version):
@@ -26,6 +27,9 @@ def run_gtk(version):
     display = Gdk.Display.get_default()
     if display is None:
         raise RuntimeError("No display connection; run with display access or a Broadway test display")
+    light = NAME == VARIANTS["light"]
+    foreground = "#1b1b1b" if light else "#e8edf5"
+    background = "#f7f7f7" if light else "#121820"
     sizes = (16, 24, 32, 48, 64)
     theme = Gtk.IconTheme.new()
     renderer = None
@@ -62,7 +66,10 @@ def run_gtk(version):
         assert info is not None and info.get_file() is not None, name
         return info, Path(info.get_file().get_path())
 
-    def render(name, size, fg="#e8edf5", accent="#5294e2"):
+    def render(name, size, fg=None, accent=None):
+        """Render regular artwork or apply GTK runtime symbolic colors."""
+        fg = fg or foreground
+        accent = accent or theme_accent("light" if light else "dark")
         info, path = lookup(name, size)
         assert path.is_relative_to(THEME), (name, path)
         if version == "3":
@@ -157,20 +164,20 @@ def run_gtk(version):
     sample = ["folder", "folder-drag-accept", "folder-home", "folder-download", "application-pdf", "text-x-python", "application-zip", "computer",
               "edit-copy", "network-wireless-signal-excellent", "document-save-symbolic", "network-wireless-signal-good-symbolic",
               "battery-level-50-symbolic", "object-select-symbolic", "folder-home-symbolic"]
-    sheet = Image.new("RGB", (960, len(sample) * 90 + 70), "#121820")
+    sheet = Image.new("RGB", (960, len(sample) * 90 + 70), background)
     draw = ImageDraw.Draw(sheet)
     font_path = subprocess.check_output(["fc-match", "-f", "%{file}", "sans"], text=True)
     font = ImageFont.truetype(font_path, 15)
-    draw.text((20, 20), f"GTK{version} native rendering / 16 · 24 · 32 · 48 · 64 px", font=font, fill="white")
+    draw.text((20, 20), f"GTK{version} native rendering / 16 · 24 · 32 · 48 · 64 px", font=font, fill=foreground)
     for row, name in enumerate(sample):
         y = 70 + row * 90
-        draw.text((20, y + 22), name, font=font, fill="#bfc9d9")
+        draw.text((20, y + 22), name, font=font, fill=foreground)
         x = 460
         for size in sizes:
             img = render(name, size)
             sheet.paste(img, (x, y + (64 - size) // 2), img)
             x += size + 24
-    output = ROOT / "previews" / f"runtime-gtk{version}.png"
+    output = ROOT / "previews" / f"runtime-{NAME}-gtk{version}.png"
     output.parent.mkdir(exist_ok=True)
     sheet.save(output)
     if renderer:
@@ -184,18 +191,52 @@ def run_gtk(version):
     return result
 
 
-def all_versions():
+@contextmanager
+def isolated_display(version, env):
+    """Run GTK on private Broadway sockets and disposable XDG settings."""
+    with tempfile.TemporaryDirectory(prefix="hikaide-runtime-") as directory:
+        root = Path(directory)
+        for variable in ("XDG_CONFIG_HOME", "XDG_DATA_HOME", "XDG_CACHE_HOME", "XDG_STATE_HOME", "XDG_RUNTIME_DIR"):
+            path = root / variable
+            path.mkdir(mode=0o700)
+            env[variable] = str(path)
+        env.update(GDK_BACKEND="broadway", BROADWAY_DISPLAY=":17", GTK_A11Y="none", NO_AT_BRIDGE="1",
+                   GIO_USE_VFS="local", GIO_USE_VOLUME_MONITOR="unix")
+        env.pop("GTK_MODULES", None)
+        server = "broadwayd" if version == "3" else "gtk4-broadwayd"
+        with (root / "server.log").open("w+") as log:
+            process = subprocess.Popen([server, "-u", str(root / "http.socket"), ":17"], env=env, stdout=log, stderr=log)
+            try:
+                for _ in range(50):
+                    if process.poll() is not None or "Listening on" in (root / "server.log").read_text():
+                        break
+                    time.sleep(.05)
+                if process.poll() is not None:
+                    raise RuntimeError((root / "server.log").read_text())
+                yield
+            finally:
+                if process.poll() is None:
+                    process.terminate()
+                process.wait(timeout=5)
+
+
+def all_versions(isolated=False):
+    """Check GTK3/4 lookup and runtime recoloring for both appearances."""
+    from contextlib import nullcontext
     results = []
-    for version in ("3", "4"):
-        process = subprocess.run([sys.executable, __file__, "--gtk", version],
-                                 env={**os.environ, "GSETTINGS_BACKEND": "memory", "GSK_RENDERER": "cairo"},
-                                 capture_output=True, text=True, timeout=60)
-        if process.stderr:
-            print(process.stderr, file=sys.stderr)
-        if process.returncode:
-            raise RuntimeError(f"GTK{version} failed ({process.returncode}): {process.stdout}")
-        results.append(json.loads(process.stdout))
+    for mode in VARIANTS:
+        for version in ("3", "4"):
+            env = {**os.environ, "GSETTINGS_BACKEND": "memory", "GSK_RENDERER": "cairo"}
+            with isolated_display(version, env) if isolated else nullcontext():
+                process = subprocess.run([sys.executable, __file__, "--gtk", version, "--variant", mode],
+                                         env=env, capture_output=True, text=True, timeout=60)
+            if process.stderr:
+                print(process.stderr, file=sys.stderr)
+            if process.returncode:
+                raise RuntimeError(f"{mode} GTK{version} failed ({process.returncode}): {process.stdout}")
+            results.append({"variant": mode, **json.loads(process.stdout)})
     target = ROOT / "reports/runtime-gtk.json"
+    target.parent.mkdir(exist_ok=True)
     target.write_text(json.dumps(results, indent=2) + "\n")
     print(target.read_text())
 
@@ -203,5 +244,9 @@ def all_versions():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--gtk", choices=["3", "4"])
+    parser.add_argument("--variant", choices=VARIANTS, default="dark")
+    parser.add_argument("--isolated", action="store_true", help="use private Broadway displays for the full matrix")
     args = parser.parse_args()
-    run_gtk(args.gtk) if args.gtk else all_versions()
+    NAME = VARIANTS[args.variant]
+    THEME = ROOT / "dist" / NAME
+    run_gtk(args.gtk) if args.gtk else all_versions(args.isolated)

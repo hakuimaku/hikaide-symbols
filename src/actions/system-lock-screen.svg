@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>system-lock-screen</title>
 
-<g transform="translate(10 10) scale(1.83)"><path d="M5 11h14v12H5Zm3 0V6a4 4 0 0 1 8 0v5M12 16v3" fill="none" stroke="#8d99a9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(10 10) scale(1.83)"><path d="M5 11h14v12H5Zm3 0V6a4 4 0 0 1 8 0v5M12 16v3" fill="none" stroke="@ACTION_GLYPH@" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>

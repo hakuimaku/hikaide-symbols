@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>video-x-generic</title>
 
-<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="#e1e3e9"/><path d="M41 4v11h11" fill="#999da8"/><g transform="translate(18 24) scale(1.16)"><path d="m5 2 17 10L5 22Z" fill="none" stroke="#30333c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M14 4h27l11 11v43H12V6q0-2 2-2Z" fill="@PAPER_SMALL@"/><path d="M41 4v11h11" fill="@PAPER_SMALL_FOLD@"/><g transform="translate(18 24) scale(1.16)"><path d="m5 2 17 10L5 22Z" fill="none" stroke="@FILE_GLYPH@" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>
