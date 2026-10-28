@@ -4,11 +4,11 @@
     "light": "#2E65A3"
   },
   "dark": {
-    "folderBack": "#55585A",
-    "folderFront": "#414345",
-    "folderCorner": "#252728",
-    "folderOpenInterior": "#2C2E30",
-    "folderOpenFront": "#494C4E",
+    "folderBack": "#414345",
+    "folderFront": "#303233",
+    "folderCorner": "#17191a",
+    "folderOpenInterior": "#202223",
+    "folderOpenFront": "#383b3d",
     "paper": "#F0F0F3",
     "paperShade": "#BFC1CA",
     "paperSmall": "#E1E3E9",
