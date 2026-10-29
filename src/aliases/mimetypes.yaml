@@ -9,7 +9,8 @@
       "application-x-zerosize",
       "text-x-log",
       "text-x-patch",
-      "text-x-diff"
+      "text-x-diff",
+      "application-x-generic"
     ],
     "application-msword": [
       "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -246,6 +247,11 @@
       "application-vnd.sqlite3",
       "application-sql",
       "text-x-sql"
+    ],
+    "application-x-code-workspace": [
+      "code-workspace",
+      "application-x-vscode-workspace",
+      "text-x-code-workspace"
     ]
   },
   "16x16/mimetypes": {
@@ -258,7 +264,8 @@
       "application-x-zerosize",
       "text-x-log",
       "text-x-patch",
-      "text-x-diff"
+      "text-x-diff",
+      "application-x-generic"
     ],
     "application-msword": [
       "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -495,6 +502,11 @@
       "application-vnd.sqlite3",
       "application-sql",
       "text-x-sql"
+    ],
+    "application-x-code-workspace": [
+      "code-workspace",
+      "application-x-vscode-workspace",
+      "text-x-code-workspace"
     ]
   },
   "24x24/mimetypes": {
@@ -507,7 +519,8 @@
       "application-x-zerosize",
       "text-x-log",
       "text-x-patch",
-      "text-x-diff"
+      "text-x-diff",
+      "application-x-generic"
     ],
     "application-msword": [
       "application-vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -744,6 +757,11 @@
       "application-vnd.sqlite3",
       "application-sql",
       "text-x-sql"
+    ],
+    "application-x-code-workspace": [
+      "code-workspace",
+      "application-x-vscode-workspace",
+      "text-x-code-workspace"
     ]
   }
 }

@@ -15,7 +15,8 @@ def audit():
                "sample.js": "const value = 1;\n", "sample.json": '{"hello":1}\n', "sample.yaml": "hello: world\n",
                "sample.toml": '[hello]\nvalue = 1\n', "sample.html": "<!doctype html><html><title>Hello</title></html>",
                "sample.css": "body { color: red; }\n", "sample.svg": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"/>',
-               "sample.pdf": "%PDF-1.7\n1 0 obj<</Type/Catalog>>endobj\n%%EOF\n", "sample.desktop": "[Desktop Entry]\nName=Test\nType=Application\nExec=true\n"}
+               "sample.pdf": "%PDF-1.7\n1 0 obj<</Type/Catalog>>endobj\n%%EOF\n", "sample.desktop": "[Desktop Entry]\nName=Test\nType=Application\nExec=true\n",
+               "sample.code-workspace": "{\n  \"folders\": []\n}\n"}
     available = {p.stem for p in (THEME / "scalable/mimetypes").glob("*.svg")}
     results = []
     with tempfile.TemporaryDirectory(prefix="hikaide-mime-") as tmp:

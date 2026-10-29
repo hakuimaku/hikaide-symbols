@@ -119,7 +119,8 @@
     "application-vnd.flatpak.ref",
     "application-x-rpm",
     "application-vnd.debian.binary-package",
-    "application-x-alpm-package"
+    "application-x-alpm-package",
+    "application-x-code-workspace"
   ],
   "devices": [
     "computer",

@@ -117,6 +117,7 @@ P = {
     "book": "M12 5Q7 1 1 3v18q6-2 11 2 5-4 11-2V3q-6-2-11 2Zm0 0v18",
     "key": "M14 9a6 6 0 1 1-6-7 6 6 0 0 1 6 7Zm-3 4 10 10m-6-6 3-3m0 6 3-3",
     "power": "M12 1v11M6 4a10 10 0 1 0 12 0",
+    "vscode": "M21.29 4.16 17.18 2.18c-.18-.08-.36-.12-.54-.12-.45 0-.67.2-.7.23-.1.05-.18.13-.19.13L7.87 9.61 4.44 7.01c-.15-.12-.33-.17-.5-.17-.21 0-.41.07-.56.21l-1.11 1c-.18.17-.27.4-.27.62s.09.45.27.62L5.25 12l-2.98 2.71c-.18.17-.27.39-.27.62s.09.45.27.62l1.1 1c.16.14.36.21.56.21.18 0 .36-.05.51-.17l3.43-2.6 7.88 7.19s.09.08.19.13c.03.03.25.23.7.23.18 0 .36-.04.54-.12l4.11-1.98c.44-.21.71-.65.71-1.13V5.29c0-.48-.27-.92-.71-1.13Zm-10.27 7.84L17 7.46v9.08l-5.98-4.54Z",
 }
 
 
@@ -266,7 +267,7 @@ def lettering(text, color="@FILE_GLYPH@", box=24):
 def mimetypes():
     # Canonical glyphs are shared by genuinely equivalent formats, via relative symlinks.
     data = {
-        "text-x-generic": ("text", "text-plain text-rtf text-richtext application-rtf application-x-empty application-x-zerosize text-x-log text-x-patch text-x-diff"),
+        "text-x-generic": ("text", "text-plain text-rtf text-richtext application-rtf application-x-empty application-x-zerosize text-x-log text-x-patch text-x-diff application-x-generic"),
         "application-msword": ("W", "application-vnd.openxmlformats-officedocument.wordprocessingml.document application-vnd.ms-word"),
         "application-vnd.ms-excel": ("spreadsheet", "application-vnd.openxmlformats-officedocument.spreadsheetml.sheet"),
         "application-vnd.ms-powerpoint": ("pie", "application-vnd.openxmlformats-officedocument.presentationml.presentation"),
@@ -307,6 +308,7 @@ def mimetypes():
         "application-x-font-ttf": ("T", "font-ttf font-otf application-x-font-otf application-font-woff font-woff font-woff2"),
         "application-x-sqlite3": ("archive-stack", "application-vnd.sqlite3 application-sql text-x-sql"),
         "application-x-bittorrent": ("download", ""),
+        "application-x-code-workspace": ("vscode", "code-workspace application-x-vscode-workspace text-x-code-workspace"),
     }
     aliases = {}
     for name, (symbol, names) in data.items():
@@ -323,7 +325,7 @@ def mimetypes():
         else:
             if symbol == "checker":
                 g = ''.join(f'<rect x="{2+x*4}" y="{2+y*4}" width="4" height="4" fill="@FILE_GLYPH@"/>' for x in range(5) for y in range(5) if (x+y)%2 == 0)
-            elif symbol == "archive-stack":
+            elif symbol in {"archive-stack", "vscode"}:
                 g = f'<path d="{P[symbol]}" fill="@FILE_GLYPH@"/>'
             else:
                 g = glyph(symbol, "@FILE_GLYPH@", 2.5) if symbol in P else lettering(symbol)
