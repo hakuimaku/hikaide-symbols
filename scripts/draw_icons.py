@@ -139,7 +139,8 @@ def write(family, name, body, size=64, accent=False):
         from outline_symbolic import outline
         geometry = outline(svg(name, body, size))
         role = ' gpa:fill="accent"' if 'gpa:stroke="accent"' in body else ''
-        body = f'<path d="{geometry}" fill="#2e3436" fill-rule="evenodd"{role}/>'
+        fill = "@STATUS_GLYPH@" if "@STATUS_GLYPH@" in body or any(name.startswith(k) for k in ("fcitx", "input-keyboard", "network-wireless", "bluetooth")) else "#2e3436"
+        body = f'<path d="{geometry}" fill="{fill}" fill-rule="evenodd"{role}/>'
     path.write_text(svg(name, body, size, accent))
 
 
@@ -352,13 +353,25 @@ def system_families():
         # Identical names across contexts must resolve identically.
         if name == "network-wired":
             body = status_body(name)
-        write("devices", name, body, accent=True)
+        elif name == "network-wireless":
+            body = wifi_body("network-wireless-signal-excellent")
+        elif name == "bluetooth":
+            body = bluetooth_body("bluetooth-active")
+        elif name == "input-keyboard":
+            body = fcitx_body("fcitx")
+        write("devices", name, body, accent=False if name in {"network-wireless", "bluetooth", "input-keyboard"} else True)
         if name == "network-wired":
             write("symbolic/devices", name + "-symbolic", status_geometry(name), size=16)
+        elif name == "network-wireless":
+            write("symbolic/devices", name + "-symbolic", status_geometry("network-wireless-signal-excellent"), size=16)
+        elif name == "bluetooth":
+            write("symbolic/devices", name + "-symbolic", status_geometry("bluetooth-active"), size=16)
+        elif name == "input-keyboard":
+            write("symbolic/devices", name + "-symbolic", status_geometry("fcitx"), size=16)
         else:
             symbolic("devices", name, symbol)
     statuses = (
-        "network-wireless-signal-excellent network-wireless-signal-good network-wireless-signal-ok network-wireless-signal-weak network-wireless-offline network-wired network-vpn bluetooth-active bluetooth-disabled audio-volume-high audio-volume-medium audio-volume-low audio-volume-muted microphone-sensitivity-high microphone-sensitivity-muted battery-full battery-good battery-low battery-caution battery-empty battery-charging user-available user-away user-busy user-offline dialog-information dialog-warning dialog-error dialog-question").split()
+        "network-wireless-signal-excellent network-wireless-signal-good network-wireless-signal-ok network-wireless-signal-weak network-wireless-offline network-wired network-vpn bluetooth-active bluetooth-disabled fcitx-lotus-default fcitx-lotus-off-default fcitx audio-volume-high audio-volume-medium audio-volume-low audio-volume-muted microphone-sensitivity-high microphone-sensitivity-muted battery-full battery-good battery-low battery-caution battery-empty battery-charging user-available user-away user-busy user-offline dialog-information dialog-warning dialog-error dialog-question").split()
     for name in statuses:
         write("status", name, status_body(name), accent="ColorScheme-Highlight" in status_body(name))
         write("symbolic/status", name + "-symbolic", status_geometry(name), size=16)
@@ -456,6 +469,16 @@ def system_families():
             "bluetooth-disabled": [
                 "blueman-disabled", "bluetooth-disconnected"
             ],
+            "fcitx-lotus-default": [
+                "fcitx-lotus", "fcitx-lotus-default-black", "fcitx-lotus-emoji",
+                "fcitx-lotus-emoji-default", "fcitx-lotus-emoji-default-black", "fcitx-unikey"
+            ],
+            "fcitx-lotus-off-default": [
+                "fcitx-lotus-off", "fcitx-lotus-off-default-black"
+            ],
+            "fcitx": [
+                "fcitx5", "org.fcitx.Fcitx5", "fcitx-kbd"
+            ],
         }
         for k, names in status_aliases.items():
             target.setdefault(k + suffix, []).extend(n + suffix for n in names)
@@ -479,7 +502,7 @@ def system_families():
 
 
 def status_geometry(name, symbolic=True):
-    color = "#2e3436" if symbolic else "@STATUS_GLYPH@"
+    color = "@STATUS_GLYPH@" if any(name.startswith(k) for k in ("fcitx", "input-keyboard", "network-wireless", "bluetooth", "network-wired")) or not symbolic else "#2e3436"
     group = lambda s: f'<g color="{color}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{s}</g>'
     muted = any(k in name for k in ("muted", "offline", "disabled"))
     cross = '<path d="m10 10 4 4m0-4-4 4"/>' if muted else ''
@@ -488,6 +511,13 @@ def status_geometry(name, symbolic=True):
         arcs = ['<circle cx="8" cy="13" r="1" fill="currentColor" stroke="none"/>',
                 '<path d="M5 10q3-3 6 0"/>', '<path d="M3 7q5-5 10 0"/>', '<path d="M1 4q7-6 14 0"/>']
         return group(''.join(arcs[:strength]) + (('<path d="M2 5q6-5 12 0" opacity=".35"/>' + cross) if muted else ''))
+    if name.startswith("fcitx"):
+        if name == "fcitx-lotus-off-default":
+            return group('<path d="M 11.5 3.5 H 4.5 V 12.5 H 11.5 M 4.5 8 H 9.5"/>')
+        elif name == "fcitx-lotus-default":
+            return group('<path d="M 3.75 3.5 L 8 12.5 L 12.25 3.5"/>')
+        else:
+            return group('<rect x="2" y="4" width="12" height="8" rx="1.5"/><path d="M 4.5 6.5 h 1 M 7.5 6.5 h 1 M 10.5 6.5 h 1 M 5 9.5 h 6"/>')
     if name.startswith("battery"):
         level = {"full": 10, "good": 7, "low": 4, "caution": 2, "empty": 0, "charging": 7}[name.split("-")[-1]]
         bar = f'<rect x="2.5" y="6" width="{level}" height="4" fill="currentColor" stroke="none"/>' if level else ''
@@ -510,7 +540,54 @@ def status_geometry(name, symbolic=True):
     return body + (group(cross) if muted else '')
 
 
+def wifi_body(name):
+    muted = any(k in name for k in ("offline", "disabled"))
+    strength = 0 if muted else {"weak": 1, "ok": 2, "good": 3, "excellent": 4}[name.rsplit("-", 1)[-1]]
+    parts = []
+    dot_op = ' opacity=".25"' if muted else ''
+    parts.append(f'<circle cx="32" cy="53" r="3.75" fill="@STATUS_GLYPH@"{dot_op}/>')
+    arcs = [
+        '<path d="M 22.5 42.8 A 14.0 14.0 0 0 1 41.5 42.8" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/>',
+        '<path d="M 14.3 34.0 A 26.0 26.0 0 0 1 49.7 34.0" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/>',
+        '<path d="M 6.1 25.2 A 38.0 38.0 0 0 1 57.9 25.2" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/>',
+    ]
+    for i, arc in enumerate(arcs, start=2):
+        if strength >= i:
+            parts.append(arc)
+        else:
+            parts.append(arc.replace('stroke="@STATUS_GLYPH@"', 'stroke="@STATUS_GLYPH@" opacity=".25"'))
+    if muted:
+        parts.append('<path d="M 40 40 L 56 56 M 56 40 L 40 56" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/>')
+    return "".join(parts)
+
+
+def bluetooth_body(name):
+    muted = any(k in name for k in ("disabled", "disconnected"))
+    opacity = ' opacity=".35"' if muted else ''
+    body = f'<path d="M 18 20 L 46 44 L 32 56 V 8 L 46 20 L 18 44" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"{opacity}/>'
+    if muted:
+        body += '<path d="M 40 40 L 56 56 M 56 40 L 40 56" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/>'
+    return body
+
+
+def fcitx_body(name):
+    if name == "fcitx-lotus-off-default":
+        return '<path d="M 46 14 H 18 V 50 H 46 M 18 32 H 38" fill="none" stroke="@STATUS_GLYPH@" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>'
+    elif name == "fcitx-lotus-default":
+        return '<path d="M 15 14 L 32 50 L 49 14" fill="none" stroke="@STATUS_GLYPH@" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>'
+    else:
+        return ('<rect x="8" y="16" width="48" height="32" rx="6" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5"/>'
+                '<path d="M 17 25 h 3 M 26 25 h 3 M 35 25 h 3 M 44 25 h 3" fill="none" stroke="@STATUS_GLYPH@" stroke-width="3.5" stroke-linecap="round"/>'
+                '<path d="M 20 38 h 24" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4" stroke-linecap="round"/>')
+
+
 def status_body(name):
+    if name.startswith("network-wireless"):
+        return wifi_body(name)
+    if name.startswith("bluetooth"):
+        return bluetooth_body(name)
+    if name.startswith("fcitx"):
+        return fcitx_body(name)
     semantic = "@WARNING@" if name in {"battery-caution", "battery-low", "dialog-warning", "user-away"} else "@ERROR@" if name in {"dialog-error", "battery-empty", "user-busy"} else None
     geom = status_geometry(name, symbolic=False)
     if semantic:

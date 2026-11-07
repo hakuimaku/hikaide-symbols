@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>input-keyboard</title>
-<style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<rect x="9" y="10" width="46" height="46" rx="12" fill="#000" opacity=".14"/><defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="@DEVICE_HIGHLIGHT@"/><stop offset="1" stop-color="@DEVICE_SHADE@"/></linearGradient></defs><g transform="translate(11 10) scale(1.75)"><path d="M1 5h22v15H1ZM4 9h1m3 0h1m3 0h1m3 0h1m3 0h1M4 13h1m3 0h1m3 0h1m3 0h1m3 0h1M7 17h10" fill="none" stroke="url(#metal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="50" cy="49" r="3" class="ColorScheme-Highlight" fill="currentColor"/>
+
+<rect x="8" y="16" width="48" height="32" rx="6" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5"/><path d="M 17 25 h 3 M 26 25 h 3 M 35 25 h 3 M 44 25 h 3" fill="none" stroke="@STATUS_GLYPH@" stroke-width="3.5" stroke-linecap="round"/><path d="M 20 38 h 24" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4" stroke-linecap="round"/>
 </svg>

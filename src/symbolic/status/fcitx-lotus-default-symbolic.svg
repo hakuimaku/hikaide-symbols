@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="16" height="16" viewBox="0 0 16 16">
+<title>fcitx-lotus-default-symbolic</title>
+
+<path d="M4.4282 3.1797L8.0000 10.7436L11.5718 3.1797L11.9969 2.7940L12.5703 2.8218L12.9560 3.2469L12.9282 3.8203L8.6782 12.8203L8.4064 13.1304L8.0000 13.2500L7.5936 13.1304L7.3217 12.8205L7.3218 12.8203L3.0718 3.8203L3.0440 3.2469L3.4297 2.8218L4.0031 2.7940L4.4282 3.1797" fill="@STATUS_GLYPH@" fill-rule="evenodd"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>fcitx-lotus-off-default</title>
+
+<path d="M 46 14 H 18 V 50 H 46 M 18 32 H 38" fill="none" stroke="@STATUS_GLYPH@" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

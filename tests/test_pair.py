@@ -21,8 +21,15 @@ class PairTests(unittest.TestCase):
         light_files = fingerprint(light)
         self.assertEqual(dark_files.keys(), light_files.keys())
         for path, value in dark_files.items():
-            if value[0] == "link" or path.startswith("symbolic/"):
+            if value[0] == "link":
                 self.assertEqual(value, light_files[path], path)
+            elif path.startswith("symbolic/"):
+                dark_text = (THEME / path).read_text()
+                light_text = (light / path).read_text()
+                if palette()["dark"]["statusGlyph"] in dark_text:
+                    self.assertIn(palette()["light"]["statusGlyph"], light_text, path)
+                else:
+                    self.assertEqual(value, light_files[path], path)
         self.assertEqual((THEME / "scalable/mimetypes/application-zip.svg").read_bytes(),
                          (light / "scalable/mimetypes/application-zip.svg").read_bytes())
         for icon in (THEME / "scalable/categories").glob("*.svg"):

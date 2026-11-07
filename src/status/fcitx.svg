@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
+<title>fcitx</title>
+
+<rect x="8" y="16" width="48" height="32" rx="6" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5"/><path d="M 17 25 h 3 M 26 25 h 3 M 35 25 h 3 M 44 25 h 3" fill="none" stroke="@STATUS_GLYPH@" stroke-width="3.5" stroke-linecap="round"/><path d="M 20 38 h 24" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4" stroke-linecap="round"/>
+</svg>

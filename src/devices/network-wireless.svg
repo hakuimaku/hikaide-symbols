@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:gpa="https://www.gtk.org/grappa" width="64" height="64" viewBox="0 0 64 64">
 <title>network-wireless</title>
-<style id="current-color-scheme">.ColorScheme-Highlight { color:@ACCENT@; }</style>
-<rect x="9" y="10" width="46" height="46" rx="12" fill="#000" opacity=".14"/><defs><linearGradient id="metal" x2=".4" y2="1"><stop stop-color="@DEVICE_HIGHLIGHT@"/><stop offset="1" stop-color="@DEVICE_SHADE@"/></linearGradient></defs><g transform="translate(11 10) scale(1.75)"><path d="M1 7q11-10 22 0M5 12q7-7 14 0m-10 5q3-3 6 0m-3 4h.01" fill="none" stroke="url(#metal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="50" cy="49" r="3" class="ColorScheme-Highlight" fill="currentColor"/>
+
+<circle cx="32" cy="53" r="3.75" fill="@STATUS_GLYPH@"/><path d="M 22.5 42.8 A 14.0 14.0 0 0 1 41.5 42.8" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/><path d="M 14.3 34.0 A 26.0 26.0 0 0 1 49.7 34.0" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/><path d="M 6.1 25.2 A 38.0 38.0 0 0 1 57.9 25.2" fill="none" stroke="@STATUS_GLYPH@" stroke-width="4.5" stroke-linecap="round"/>
 </svg>

@@ -175,6 +175,23 @@
     "bluetooth-disabled": [
       "blueman-disabled",
       "bluetooth-disconnected"
+    ],
+    "fcitx-lotus-default": [
+      "fcitx-lotus",
+      "fcitx-lotus-default-black",
+      "fcitx-lotus-emoji",
+      "fcitx-lotus-emoji-default",
+      "fcitx-lotus-emoji-default-black",
+      "fcitx-unikey"
+    ],
+    "fcitx-lotus-off-default": [
+      "fcitx-lotus-off",
+      "fcitx-lotus-off-default-black"
+    ],
+    "fcitx": [
+      "fcitx5",
+      "org.fcitx.Fcitx5",
+      "fcitx-kbd"
     ]
   },
   "scalable/devices": {
@@ -277,6 +294,23 @@
     "bluetooth-disabled-symbolic": [
       "blueman-disabled-symbolic",
       "bluetooth-disconnected-symbolic"
+    ],
+    "fcitx-lotus-default-symbolic": [
+      "fcitx-lotus-symbolic",
+      "fcitx-lotus-default-black-symbolic",
+      "fcitx-lotus-emoji-symbolic",
+      "fcitx-lotus-emoji-default-symbolic",
+      "fcitx-lotus-emoji-default-black-symbolic",
+      "fcitx-unikey-symbolic"
+    ],
+    "fcitx-lotus-off-default-symbolic": [
+      "fcitx-lotus-off-symbolic",
+      "fcitx-lotus-off-default-black-symbolic"
+    ],
+    "fcitx-symbolic": [
+      "fcitx5-symbolic",
+      "org.fcitx.Fcitx5-symbolic",
+      "fcitx-kbd-symbolic"
     ]
   },
   "symbolic/devices": {
